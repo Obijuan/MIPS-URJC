@@ -62,7 +62,7 @@
             "virtual": false
           },
           "position": {
-            "x": 992,
+            "x": 1536,
             "y": -248
           }
         },
@@ -82,8 +82,8 @@
             "clock": false
           },
           "position": {
-            "x": -344,
-            "y": -216
+            "x": -224,
+            "y": -152
           }
         },
         {
@@ -102,8 +102,46 @@
             "clock": false
           },
           "position": {
-            "x": -392,
-            "y": -104
+            "x": 208,
+            "y": -32
+          }
+        },
+        {
+          "id": "ca7cb644-dd37-46c5-a317-977c1c2da233",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D13",
+                "value": "144"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1456,
+            "y": 128
+          }
+        },
+        {
+          "id": "5470e4ef-560a-411d-8a7b-091ab03a026e",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D12",
+                "value": "143"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1456,
+            "y": 232
           }
         },
         {
@@ -111,17 +149,17 @@
           "type": "basic.memory",
           "data": {
             "name": "",
-            "list": "0x00000055\n0x000000AA\n0x000000F0\n0x0000000F",
+            "list": "340100ff //-- ori $1, $0, 0xff\n00000000\n34010055\n34010001",
             "local": false,
             "format": 10
           },
           "position": {
-            "x": 88,
-            "y": -328
+            "x": 40,
+            "y": -376
           },
           "size": {
-            "width": 200,
-            "height": 112
+            "width": 304,
+            "height": 104
           }
         },
         {
@@ -172,8 +210,8 @@
             "readonly": true
           },
           "position": {
-            "x": -312,
-            "y": -248
+            "x": -192,
+            "y": -176
           },
           "size": {
             "width": 104,
@@ -188,8 +226,8 @@
             "readonly": true
           },
           "position": {
-            "x": 152,
-            "y": -352
+            "x": 144,
+            "y": -400
           },
           "size": {
             "width": 144,
@@ -267,7 +305,7 @@
             }
           },
           "position": {
-            "x": 720,
+            "x": 808,
             "y": -136
           },
           "size": {
@@ -279,12 +317,127 @@
           "id": "5bc382b1-12a5-4439-aaba-4ac806b25310",
           "type": "e2b856e09a9329dca4a720ecad63740cfd415268",
           "position": {
-            "x": -224,
-            "y": -120
+            "x": 368,
+            "y": -48
           },
           "size": {
             "width": 96,
             "height": 64
+          }
+        },
+        {
+          "id": "7ea34398-b4ad-4d03-a12b-32862d26e4de",
+          "type": "basic.info",
+          "data": {
+            "info": "**Registro 1**  ",
+            "readonly": true
+          },
+          "position": {
+            "x": 1328,
+            "y": -208
+          },
+          "size": {
+            "width": 128,
+            "height": 32
+          }
+        },
+        {
+          "id": "568bcd6f-4d3c-4f20-a1e2-4c8a177cb44a",
+          "type": "basic.code",
+          "data": {
+            "code": "reg q = 0;\n\nalways @(posedge clk)\n  if (load)\n      q <= d;",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "d",
+                  "range": "[7:0]",
+                  "size": 8
+                },
+                {
+                  "name": "load"
+                }
+              ],
+              "out": [
+                {
+                  "name": "q",
+                  "range": "[7:0]",
+                  "size": 8
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 1248,
+            "y": -168
+          },
+          "size": {
+            "width": 216,
+            "height": 120
+          }
+        },
+        {
+          "id": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+          "type": "basic.code",
+          "data": {
+            "code": "//-- Codigos operacion \nlocalparam NOP = 6'b000000;\nlocalparam ORI = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg load = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n    if (rst)\n      state <= IDLE;\n    else\n      state <= next_state;\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  load = 0;\n  error = 0;\n  o_fin = 0;\n  \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n        else\n          if (fin)\n            next_state = FIN;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = NEXT;\n      \n      case (opcode)\n\n        //-- Instruccion NOP\n        NOP: begin\n           \n        end\n        \n        //-- Instruccion ORI\n        ORI: begin\n          next_state = NEXT;\n          load = 1;\n          if (rs!=5'b00000 || rt!=5'b00001)\n            next_state = ERROR;\n        end\n\n        default: begin\n          next_state = ERROR;\n        end\n\n      endcase\n    end\n    \n\n    //-- Incrementar pc\n    NEXT: begin\n        next_state = IDLE;\n        incPC = 1;\n      end\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "exec"
+                },
+                {
+                  "name": "fin"
+                },
+                {
+                  "name": "opcode",
+                  "range": "[5:0]",
+                  "size": 6
+                },
+                {
+                  "name": "rs",
+                  "range": "[4:0]",
+                  "size": 5
+                },
+                {
+                  "name": "rt",
+                  "range": "[4:0]",
+                  "size": 5
+                },
+                {
+                  "name": "rst"
+                }
+              ],
+              "out": [
+                {
+                  "name": "load"
+                },
+                {
+                  "name": "error"
+                },
+                {
+                  "name": "o_fin"
+                },
+                {
+                  "name": "incPC"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 824,
+            "y": 8
+          },
+          "size": {
+            "width": 496,
+            "height": 408
           }
         }
       ],
@@ -323,6 +476,16 @@
         },
         {
           "source": {
+            "block": "860c14c6-7a71-419c-a715-bcea5924c2ca",
+            "port": "out"
+          },
+          "target": {
+            "block": "5bc382b1-12a5-4439-aaba-4ac806b25310",
+            "port": "21bc142d-a93a-430d-b37a-326435def9f9"
+          }
+        },
+        {
+          "source": {
             "block": "1fd7af57-3f8a-4929-bf86-af7c23acff27",
             "port": "inm"
           },
@@ -338,30 +501,21 @@
             "port": "o"
           },
           "target": {
-            "block": "2cde118e-ff3d-48a5-9fdd-ff0bf7cf8563",
-            "port": "in"
+            "block": "568bcd6f-4d3c-4f20-a1e2-4c8a177cb44a",
+            "port": "d"
           },
           "size": 8
         },
         {
           "source": {
-            "block": "860c14c6-7a71-419c-a715-bcea5924c2ca",
-            "port": "out"
+            "block": "568bcd6f-4d3c-4f20-a1e2-4c8a177cb44a",
+            "port": "q"
           },
           "target": {
-            "block": "5bc382b1-12a5-4439-aaba-4ac806b25310",
-            "port": "21bc142d-a93a-430d-b37a-326435def9f9"
-          }
-        },
-        {
-          "source": {
-            "block": "5bc382b1-12a5-4439-aaba-4ac806b25310",
-            "port": "997db8c4-b772-49d8-83e7-4427aff720e6"
+            "block": "2cde118e-ff3d-48a5-9fdd-ff0bf7cf8563",
+            "port": "in"
           },
-          "target": {
-            "block": "67707bbe-39e6-47ae-b3a7-92a6ff6da325",
-            "port": "26aba23f-8567-4e9b-bd45-c26724030f33"
-          }
+          "size": 8
         },
         {
           "source": {
@@ -372,12 +526,146 @@
             "block": "67707bbe-39e6-47ae-b3a7-92a6ff6da325",
             "port": "743b5299-2d89-4783-b7c9-12a5b36df406"
           },
+          "vertices": []
+        },
+        {
+          "source": {
+            "block": "5bc382b1-12a5-4439-aaba-4ac806b25310",
+            "port": "997db8c4-b772-49d8-83e7-4427aff720e6"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "exec"
+          },
           "vertices": [
             {
-              "x": -112,
-              "y": -168
+              "x": 512,
+              "y": 16
             }
           ]
+        },
+        {
+          "source": {
+            "block": "67707bbe-39e6-47ae-b3a7-92a6ff6da325",
+            "port": "cc17ff4d-1c27-4dc3-a14c-da730d54750e"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "fin"
+          },
+          "vertices": [
+            {
+              "x": 64,
+              "y": -24
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "1fd7af57-3f8a-4929-bf86-af7c23acff27",
+            "port": "opcode"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "opcode"
+          },
+          "size": 6
+        },
+        {
+          "source": {
+            "block": "1fd7af57-3f8a-4929-bf86-af7c23acff27",
+            "port": "rs"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "rs"
+          },
+          "vertices": [
+            {
+              "x": 728,
+              "y": 80
+            }
+          ],
+          "size": 5
+        },
+        {
+          "source": {
+            "block": "1fd7af57-3f8a-4929-bf86-af7c23acff27",
+            "port": "rt"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "rt"
+          },
+          "vertices": [
+            {
+              "x": 704,
+              "y": 144
+            }
+          ],
+          "size": 5
+        },
+        {
+          "source": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "load"
+          },
+          "target": {
+            "block": "568bcd6f-4d3c-4f20-a1e2-4c8a177cb44a",
+            "port": "load"
+          }
+        },
+        {
+          "source": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "incPC"
+          },
+          "target": {
+            "block": "67707bbe-39e6-47ae-b3a7-92a6ff6da325",
+            "port": "26aba23f-8567-4e9b-bd45-c26724030f33"
+          },
+          "vertices": [
+            {
+              "x": 1416,
+              "y": 488
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "6c25c629-829c-4ff3-8c78-2fffbe8f399f",
+            "port": "out"
+          },
+          "target": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "rst"
+          },
+          "vertices": [
+            {
+              "x": -104,
+              "y": 200
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "error"
+          },
+          "target": {
+            "block": "ca7cb644-dd37-46c5-a317-977c1c2da233",
+            "port": "in"
+          }
+        },
+        {
+          "source": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "o_fin"
+          },
+          "target": {
+            "block": "5470e4ef-560a-411d-8a7b-091ab03a026e",
+            "port": "in"
+          }
         }
       ]
     }
