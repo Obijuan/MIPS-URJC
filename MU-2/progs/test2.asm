@@ -1,0 +1,4 @@
+addiu $1,$0,0xFF
+addiu $1,$0,0xAA
+addiu $1,$0,0x55
+addiu $1,$0,0xF0

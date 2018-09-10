@@ -1,0 +1,8 @@
+addiu $2,$0,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
+addiu $1,$1,0x01
