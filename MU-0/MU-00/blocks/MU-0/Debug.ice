@@ -87,6 +87,26 @@
           }
         },
         {
+          "id": "8e9380dc-a456-448a-8c04-8f1fadb31274",
+          "type": "basic.input",
+          "data": {
+            "name": "boton2",
+            "pins": [
+              {
+                "index": "0",
+                "name": "SW2",
+                "value": "11"
+              }
+            ],
+            "virtual": true,
+            "clock": false
+          },
+          "position": {
+            "x": -152,
+            "y": 792
+          }
+        },
+        {
           "id": "a27a7562-2b69-4e5f-ad12-16065f4cc7ce",
           "type": "basic.input",
           "data": {
@@ -113,8 +133,8 @@
             "clock": false
           },
           "position": {
-            "x": 152,
-            "y": 608
+            "x": 168,
+            "y": 944
           }
         },
         {
@@ -169,8 +189,8 @@
             "clock": false
           },
           "position": {
-            "x": 152,
-            "y": 712
+            "x": 176,
+            "y": 1016
           }
         },
         {
@@ -189,28 +209,8 @@
             "clock": false
           },
           "position": {
-            "x": 160,
-            "y": 912
-          }
-        },
-        {
-          "id": "8e9380dc-a456-448a-8c04-8f1fadb31274",
-          "type": "basic.input",
-          "data": {
-            "name": "boton2",
-            "pins": [
-              {
-                "index": "0",
-                "name": "SW2",
-                "value": "11"
-              }
-            ],
-            "virtual": true,
-            "clock": false
-          },
-          "position": {
-            "x": 160,
-            "y": 1024
+            "x": 168,
+            "y": 1088
           }
         },
         {
@@ -324,8 +324,8 @@
           "id": "daa8d9af-39ce-4a1a-aba7-eca737012e06",
           "type": "a627f5aacef2457b46054b0e895bd70d62c19a0c",
           "position": {
-            "x": 360,
-            "y": 984
+            "x": 64,
+            "y": 776
           },
           "size": {
             "width": 96,
@@ -340,8 +340,8 @@
             "readonly": true
           },
           "position": {
-            "x": 344,
-            "y": 1080
+            "x": -128,
+            "y": 728
           },
           "size": {
             "width": 240,
@@ -743,7 +743,8 @@
           "target": {
             "block": "daa8d9af-39ce-4a1a-aba7-eca737012e06",
             "port": "c1e09958-aeb1-4453-af92-da0679a91f1d"
-          }
+          },
+          "vertices": []
         },
         {
           "source": {
@@ -812,12 +813,7 @@
             "block": "daa8d9af-39ce-4a1a-aba7-eca737012e06",
             "port": "83a877b3-9093-4fea-8a7e-632a7d13525a"
           },
-          "vertices": [
-            {
-              "x": -24,
-              "y": 920
-            }
-          ]
+          "vertices": []
         },
         {
           "source": {
