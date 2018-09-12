@@ -5,7 +5,7 @@
     "version": "1.0",
     "description": "Formato de la instrucción. Separación de cables por campos",
     "author": "Juan González-Gómez",
-    "image": ""
+    "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22262.672%22%20height=%22243.391%22%20viewBox=%220%200%2069.498734%2064.397202%22%3E%3Cg%20transform=%22translate(-51.044%20-164.84)%22%3E%3Cpath%20d=%22M52.118%20200.248H80.18%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%222.117%22%20stroke-linecap=%22round%22/%3E%3Cpath%20d=%22M105.077%20165.898h-23.96v62.28h38.352%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%222.117%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22bevel%22/%3E%3Ccircle%20cx=%2281.359%22%20cy=%22200.333%22%20r=%222.929%22%20fill=%22#00f%22/%3E%3Cpath%20d=%22M82.052%20179.669h28.063%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%222.117%22%20stroke-linecap=%22round%22/%3E%3Ccircle%20cx=%2281.359%22%20cy=%22180.02%22%20r=%222.929%22%20fill=%22#00f%22/%3E%3Cpath%20d=%22M82.052%20190.092l24.054.267%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%222.117%22%20stroke-linecap=%22round%22/%3E%3Ccircle%20cx=%2281.359%22%20cy=%22190.444%22%20r=%222.929%22%20fill=%22#00f%22/%3E%3Cpath%20d=%22M82.052%20213.345h28.063%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%222.117%22%20stroke-linecap=%22round%22/%3E%3Ccircle%20cx=%2281.359%22%20cy=%22213.696%22%20r=%222.929%22%20fill=%22#00f%22/%3E%3C/g%3E%3C/svg%3E"
   },
   "design": {
     "board": "icezum",
@@ -70,7 +70,7 @@
           "id": "9b677779-7cda-41bd-a081-d10def0c33c3",
           "type": "basic.output",
           "data": {
-            "name": "rt_c",
+            "name": "rt",
             "range": "[1:0]",
             "pins": [
               {
