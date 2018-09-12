@@ -334,35 +334,17 @@
           }
         },
         {
-          "id": "334c1022-e5d6-4163-8d11-e725b5f8e742",
-          "type": "basic.memory",
-          "data": {
-            "name": "",
-            "list": "10840000\n0000000d\n",
-            "local": false,
-            "format": 10
-          },
-          "position": {
-            "x": 88,
-            "y": -296
-          },
-          "size": {
-            "width": 152,
-            "height": 128
-          }
-        },
-        {
           "id": "9c485676-ff30-4754-a64a-58e347ab0085",
           "type": "basic.memory",
           "data": {
             "name": "",
-            "list": "240100aa\n24010055\n08000c00",
+            "list": "240100aa\n00000000\n24010055\n08000c00",
             "local": false,
             "format": 10
           },
           "position": {
-            "x": 128,
-            "y": -704
+            "x": 104,
+            "y": -288
           },
           "size": {
             "width": 128,
@@ -1191,44 +1173,6 @@
           }
         },
         {
-          "id": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-          "type": "basic.code",
-          "data": {
-            "code": "reg pc = 0; \n\n\nalways @(posedge clk)\n  if (load)\n    pc <= addr; \n    ",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "addr",
-                  "range": "[2:0]",
-                  "size": 3
-                },
-                {
-                  "name": "load"
-                }
-              ],
-              "out": [
-                {
-                  "name": "pc",
-                  "range": "[2:0]",
-                  "size": 3
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": -528,
-            "y": -152
-          },
-          "size": {
-            "width": 248,
-            "height": 128
-          }
-        },
-        {
           "id": "04d398e6-5efe-4546-a776-5b10348ca2da",
           "type": "basic.code",
           "data": {
@@ -1308,12 +1252,12 @@
           "id": "852edbc5-80d8-4bca-956e-1539c1ff9223",
           "type": "basic.info",
           "data": {
-            "info": "ini:\naddiu $1, $0, 0xAA\naddiu $1, $0, 0x55\nj ini",
-            "readonly": false
+            "info": "ini:  \naddiu $1, $0, 0xAA  \nnop  \naddiu $1, $0, 0x55  \nj ini  ",
+            "readonly": true
           },
           "position": {
             "x": 256,
-            "y": -680
+            "y": -272
           },
           "size": {
             "width": 168,
@@ -1581,6 +1525,18 @@
           "size": {
             "width": 152,
             "height": 72
+          }
+        },
+        {
+          "id": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+          "type": "eb9839e24372a3ab5fa934fa6f656bc455fc9991",
+          "position": {
+            "x": -452,
+            "y": -136
+          },
+          "size": {
+            "width": 96,
+            "height": 96
           }
         }
       ],
@@ -2281,8 +2237,8 @@
         },
         {
           "source": {
-            "block": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-            "port": "pc"
+            "block": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+            "port": "b27c1a97-5265-4344-96d7-396e48e95691"
           },
           "target": {
             "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
@@ -2292,8 +2248,8 @@
         },
         {
           "source": {
-            "block": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-            "port": "pc"
+            "block": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+            "port": "b27c1a97-5265-4344-96d7-396e48e95691"
           },
           "target": {
             "block": "98a20698-024f-4d1b-9d91-6a077f5b0c49",
@@ -2313,14 +2269,14 @@
             "port": "incPC"
           },
           "target": {
-            "block": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-            "port": "load"
+            "block": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+            "port": "8e71d5d1-387d-4eaa-8666-74695ebfb74d"
           }
         },
         {
           "source": {
-            "block": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-            "port": "pc"
+            "block": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+            "port": "b27c1a97-5265-4344-96d7-396e48e95691"
           },
           "target": {
             "block": "04d398e6-5efe-4546-a776-5b10348ca2da",
@@ -2354,27 +2310,6 @@
             "block": "b1fe0811-ba21-4642-abb4-1be9abf2f0a5",
             "port": "c1c7c58c-e81e-43a1-b9c4-24e306586acf"
           },
-          "size": 3
-        },
-        {
-          "source": {
-            "block": "b1fe0811-ba21-4642-abb4-1be9abf2f0a5",
-            "port": "d9759409-4f6c-4f14-9d2e-06142c86cda2"
-          },
-          "target": {
-            "block": "5d55c47e-0e92-4cd1-b17c-0112657c99a2",
-            "port": "addr"
-          },
-          "vertices": [
-            {
-              "x": 1560,
-              "y": -464
-            },
-            {
-              "x": -624,
-              "y": -520
-            }
-          ],
           "size": 3
         },
         {
@@ -2524,13 +2459,30 @@
         },
         {
           "source": {
-            "block": "334c1022-e5d6-4163-8d11-e725b5f8e742",
+            "block": "9c485676-ff30-4754-a64a-58e347ab0085",
             "port": "memory-out"
           },
           "target": {
             "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
             "port": "c71c44ac-0500-4eb5-9c1c-4ea21cd78377"
           }
+        },
+        {
+          "source": {
+            "block": "b1fe0811-ba21-4642-abb4-1be9abf2f0a5",
+            "port": "d9759409-4f6c-4f14-9d2e-06142c86cda2"
+          },
+          "target": {
+            "block": "dc42d59e-1586-4c8e-a0ab-290176ceb2b0",
+            "port": "505c6e77-43b8-4832-abc5-90e8fc5ab3ba"
+          },
+          "vertices": [
+            {
+              "x": -664,
+              "y": -536
+            }
+          ],
+          "size": 3
         }
       ]
     }
@@ -5186,6 +5138,160 @@
               "target": {
                 "block": "664caf9e-5f40-4df4-800a-b626af702e62",
                 "port": "in"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "eb9839e24372a3ab5fa934fa6f656bc455fc9991": {
+      "package": {
+        "name": "PC",
+        "version": "1.0",
+        "description": "Contador de programa (PC) del procesador MU-0",
+        "author": "Juan González-Gómez",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "cbd62992-f483-426a-b7a5-47f793518b57",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": 128,
+                "y": 56
+              }
+            },
+            {
+              "id": "b27c1a97-5265-4344-96d7-396e48e95691",
+              "type": "basic.output",
+              "data": {
+                "name": "",
+                "range": "[2:0]",
+                "size": 3
+              },
+              "position": {
+                "x": 664,
+                "y": 192
+              }
+            },
+            {
+              "id": "505c6e77-43b8-4832-abc5-90e8fc5ab3ba",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "range": "[2:0]",
+                "clock": false,
+                "size": 3
+              },
+              "position": {
+                "x": 128,
+                "y": 192
+              }
+            },
+            {
+              "id": "8e71d5d1-387d-4eaa-8666-74695ebfb74d",
+              "type": "basic.input",
+              "data": {
+                "name": "load",
+                "clock": false
+              },
+              "position": {
+                "x": 128,
+                "y": 304
+              }
+            },
+            {
+              "id": "92791f65-6b6b-4d12-98e8-64f1934ac3a9",
+              "type": "basic.code",
+              "data": {
+                "code": "reg pc = 0; \n\n\nalways @(posedge clk)\n  if (load)\n    pc <= addr; \n    ",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "addr",
+                      "range": "[2:0]",
+                      "size": 3
+                    },
+                    {
+                      "name": "load"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "pc",
+                      "range": "[2:0]",
+                      "size": 3
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 312,
+                "y": 160
+              },
+              "size": {
+                "width": 248,
+                "height": 128
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "92791f65-6b6b-4d12-98e8-64f1934ac3a9",
+                "port": "pc"
+              },
+              "target": {
+                "block": "b27c1a97-5265-4344-96d7-396e48e95691",
+                "port": "in"
+              },
+              "size": 3
+            },
+            {
+              "source": {
+                "block": "cbd62992-f483-426a-b7a5-47f793518b57",
+                "port": "out"
+              },
+              "target": {
+                "block": "92791f65-6b6b-4d12-98e8-64f1934ac3a9",
+                "port": "clk"
+              },
+              "vertices": [
+                {
+                  "x": 264,
+                  "y": 128
+                }
+              ]
+            },
+            {
+              "source": {
+                "block": "505c6e77-43b8-4832-abc5-90e8fc5ab3ba",
+                "port": "out"
+              },
+              "target": {
+                "block": "92791f65-6b6b-4d12-98e8-64f1934ac3a9",
+                "port": "addr"
+              },
+              "size": 3
+            },
+            {
+              "source": {
+                "block": "8e71d5d1-387d-4eaa-8666-74695ebfb74d",
+                "port": "out"
+              },
+              "target": {
+                "block": "92791f65-6b6b-4d12-98e8-64f1934ac3a9",
+                "port": "load"
               }
             }
           ]
