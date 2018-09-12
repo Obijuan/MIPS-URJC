@@ -188,17 +188,17 @@
           }
         },
         {
-          "id": "aaeccd8a-9ee0-41a4-8272-fa5c2c126f99",
+          "id": "9c485676-ff30-4754-a64a-58e347ab0085",
           "type": "basic.memory",
           "data": {
             "name": "",
-            "list": "8c020000\n24420001\nac020000\n24020000\n8c020000\n",
+            "list": "240100aa\n00000000\n24010055\n08000c00",
             "local": false,
             "format": 10
           },
           "position": {
-            "x": -584,
-            "y": -944
+            "x": -592,
+            "y": -144
           },
           "size": {
             "width": 128,
@@ -296,17 +296,17 @@
           }
         },
         {
-          "id": "9c485676-ff30-4754-a64a-58e347ab0085",
+          "id": "aaeccd8a-9ee0-41a4-8272-fa5c2c126f99",
           "type": "basic.memory",
           "data": {
             "name": "",
-            "list": "240100aa\n00000000\n24010055\n08000c00",
+            "list": "8c020000\n24420001\nac020000\n24020000\n8c020000\n",
             "local": false,
             "format": 10
           },
           "position": {
             "x": 16,
-            "y": -288
+            "y": -320
           },
           "size": {
             "width": 128,
@@ -434,7 +434,7 @@
             "format": 10
           },
           "position": {
-            "x": 2536,
+            "x": 2560,
             "y": -384
           },
           "size": {
@@ -827,97 +827,18 @@
           }
         },
         {
-          "id": "02474693-9398-4548-b940-ad19005bc553",
-          "type": "basic.code",
-          "data": {
-            "code": "assign addr = i[4:2];\n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "i",
-                  "range": "[7:0]",
-                  "size": 8
-                }
-              ],
-              "out": [
-                {
-                  "name": "addr",
-                  "range": "[2:0]",
-                  "size": 3
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 2120,
-            "y": -176
-          },
-          "size": {
-            "width": 200,
-            "height": 88
-          }
-        },
-        {
-          "id": "a1101024-bcc1-4277-96f5-ff9a9ed2767c",
-          "type": "basic.code",
-          "data": {
-            "code": "//-- Bits del bus de entrada\nlocalparam N = 3;\n\n//-- Calcular tamaño de la tabla\n//-- (filas) segun los bits de entrada\nlocalparam TAM = 2 ** N;\n\n//-- Definición de la tabla\n//-- Tabla de TAM elementos de M bits\nreg [7:0] tabla[0:TAM-1];\n\n//-- Read the table\nassign data = tabla[addr];\n\n//-- Puerto escritura\nalways @(posedge clk)\n  if (write)\n    tabla[addr] <= data_in;\n\n//-- Init table from DATA parameters\ninitial begin\n  if (DATA) $readmemh(DATA, tabla);\nend",
-            "params": [
-              {
-                "name": "DATA"
-              }
-            ],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "addr",
-                  "range": "[2:0]",
-                  "size": 3
-                },
-                {
-                  "name": "data_in",
-                  "range": "[7:0]",
-                  "size": 8
-                },
-                {
-                  "name": "write"
-                }
-              ],
-              "out": [
-                {
-                  "name": "data",
-                  "range": "[7:0]",
-                  "size": 8
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 2424,
-            "y": -216
-          },
-          "size": {
-            "width": 368,
-            "height": 232
-          }
-        },
-        {
           "id": "61be3b27-8c16-415c-9136-50bc18fa83d0",
           "type": "basic.info",
           "data": {
-            "info": "lw $2, ($0) \naddiu $2, $2, 0x01  \nsw $2, ($0) \naddiu $2, $0, 0x00 \nlw $2, ($0) ",
-            "readonly": false
+            "info": "lw $2, ($0)  \naddiu $2, $2, 0x01  \nsw $2, ($0)  \naddiu $2, $0, 0x00  \nlw $2, ($0)  ",
+            "readonly": true
           },
           "position": {
-            "x": -456,
-            "y": -920
+            "x": 152,
+            "y": -296
           },
           "size": {
-            "width": 168,
+            "width": 192,
             "height": 120
           }
         },
@@ -1077,8 +998,8 @@
             "readonly": true
           },
           "position": {
-            "x": 152,
-            "y": -248
+            "x": -456,
+            "y": -104
           },
           "size": {
             "width": 168,
@@ -1372,10 +1293,10 @@
                   "name": "error"
                 },
                 {
-                  "name": "memtoreg"
+                  "name": "memwrite"
                 },
                 {
-                  "name": "memwrite"
+                  "name": "memtoreg"
                 },
                 {
                   "name": "incPC"
@@ -1390,6 +1311,53 @@
           "size": {
             "width": 488,
             "height": 488
+          }
+        },
+        {
+          "id": "a1101024-bcc1-4277-96f5-ff9a9ed2767c",
+          "type": "basic.code",
+          "data": {
+            "code": "//-- Bits del bus de entrada\nlocalparam N = 3;\n\nwire [N-1:0] addr_c = addr[4:4-N+1];\n\n//-- Calcular tamaño de la tabla\n//-- (filas) segun los bits de entrada\nlocalparam TAM = 2 ** N;\n\n//-- Definición de la tabla\n//-- Tabla de TAM elementos de M bits\nreg [7:0] tabla[0:TAM-1];\n\n//-- Read the table\nassign data = tabla[addr_c];\n\n//-- Puerto escritura\nalways @(posedge clk)\n  if (write)\n    tabla[addr] <= data_in;\n\n//-- Init table from DATA parameters\ninitial begin\n  if (DATA) $readmemh(DATA, tabla);\nend",
+            "params": [
+              {
+                "name": "DATA"
+              }
+            ],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "addr",
+                  "range": "[7:0]",
+                  "size": 8
+                },
+                {
+                  "name": "data_in",
+                  "range": "[7:0]",
+                  "size": 8
+                },
+                {
+                  "name": "write"
+                }
+              ],
+              "out": [
+                {
+                  "name": "data",
+                  "range": "[7:0]",
+                  "size": 8
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 2448,
+            "y": -216
+          },
+          "size": {
+            "width": 368,
+            "height": 232
           }
         }
       ],
@@ -1695,29 +1663,6 @@
             "block": "e4f7dbde-bc8f-45ed-a052-7b9e43dfad9b",
             "port": "1e637a79-4a6d-495c-bcac-9664bdbe4b94"
           }
-        },
-        {
-          "source": {
-            "block": "c658e799-9027-44cb-a982-6ec190646715",
-            "port": "r"
-          },
-          "target": {
-            "block": "02474693-9398-4548-b940-ad19005bc553",
-            "port": "i"
-          },
-          "size": 8
-        },
-        {
-          "source": {
-            "block": "02474693-9398-4548-b940-ad19005bc553",
-            "port": "addr"
-          },
-          "target": {
-            "block": "a1101024-bcc1-4277-96f5-ff9a9ed2767c",
-            "port": "addr"
-          },
-          "vertices": [],
-          "size": 3
         },
         {
           "source": {
@@ -2150,16 +2095,6 @@
         },
         {
           "source": {
-            "block": "9c485676-ff30-4754-a64a-58e347ab0085",
-            "port": "memory-out"
-          },
-          "target": {
-            "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
-            "port": "c71c44ac-0500-4eb5-9c1c-4ea21cd78377"
-          }
-        },
-        {
-          "source": {
             "block": "b1fe0811-ba21-4642-abb4-1be9abf2f0a5",
             "port": "d9759409-4f6c-4f14-9d2e-06142c86cda2"
           },
@@ -2319,6 +2254,27 @@
             "port": "800daa07-10cd-4fdd-b4bb-cb98b66867bd"
           },
           "size": 2
+        },
+        {
+          "source": {
+            "block": "c658e799-9027-44cb-a982-6ec190646715",
+            "port": "r"
+          },
+          "target": {
+            "block": "a1101024-bcc1-4277-96f5-ff9a9ed2767c",
+            "port": "addr"
+          },
+          "size": 8
+        },
+        {
+          "source": {
+            "block": "aaeccd8a-9ee0-41a4-8272-fa5c2c126f99",
+            "port": "memory-out"
+          },
+          "target": {
+            "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
+            "port": "c71c44ac-0500-4eb5-9c1c-4ea21cd78377"
+          }
         }
       ]
     }
