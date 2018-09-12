@@ -132,26 +132,6 @@
           }
         },
         {
-          "id": "860c14c6-7a71-419c-a715-bcea5924c2ca",
-          "type": "basic.input",
-          "data": {
-            "name": "Botón",
-            "pins": [
-              {
-                "index": "0",
-                "name": "SW1",
-                "value": "10"
-              }
-            ],
-            "virtual": false,
-            "clock": false
-          },
-          "position": {
-            "x": 312,
-            "y": 384
-          }
-        },
-        {
           "id": "ca7cb644-dd37-46c5-a317-977c1c2da233",
           "type": "basic.output",
           "data": {
@@ -187,6 +167,26 @@
           "position": {
             "x": 1376,
             "y": 624
+          }
+        },
+        {
+          "id": "860c14c6-7a71-419c-a715-bcea5924c2ca",
+          "type": "basic.input",
+          "data": {
+            "name": "Botón",
+            "pins": [
+              {
+                "index": "0",
+                "name": "SW1",
+                "value": "10"
+              }
+            ],
+            "virtual": false,
+            "clock": false
+          },
+          "position": {
+            "x": 224,
+            "y": 704
           }
         },
         {
@@ -516,8 +516,8 @@
           "id": "5bc382b1-12a5-4439-aaba-4ac806b25310",
           "type": "e2b856e09a9329dca4a720ecad63740cfd415268",
           "position": {
-            "x": 472,
-            "y": 368
+            "x": 384,
+            "y": 688
           },
           "size": {
             "width": 96,
@@ -532,8 +532,8 @@
             "readonly": true
           },
           "position": {
-            "x": 360,
-            "y": 328
+            "x": 336,
+            "y": 768
           },
           "size": {
             "width": 208,
@@ -1250,80 +1250,6 @@
           }
         },
         {
-          "id": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-          "type": "basic.code",
-          "data": {
-            "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "exec"
-                },
-                {
-                  "name": "fin"
-                },
-                {
-                  "name": "opcode",
-                  "range": "[5:0]",
-                  "size": 6
-                },
-                {
-                  "name": "regs_ok"
-                }
-              ],
-              "out": [
-                {
-                  "name": "regDest"
-                },
-                {
-                  "name": "regwrite"
-                },
-                {
-                  "name": "jump"
-                },
-                {
-                  "name": "Aluop",
-                  "range": "[1:0]",
-                  "size": 2
-                },
-                {
-                  "name": "error"
-                },
-                {
-                  "name": "o_fin"
-                },
-                {
-                  "name": "memtoreg"
-                },
-                {
-                  "name": "alusrc"
-                },
-                {
-                  "name": "memwrite"
-                },
-                {
-                  "name": "beq"
-                },
-                {
-                  "name": "incPC"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 760,
-            "y": 280
-          },
-          "size": {
-            "width": 488,
-            "height": 488
-          }
-        },
-        {
           "id": "e7e66461-be48-4f49-b1ef-e2baeada4921",
           "type": "02e1f8c3ccf1589bf5e0ef41f6e3c4cc841a47c4",
           "position": {
@@ -1477,6 +1403,80 @@
             "width": 96,
             "height": 224
           }
+        },
+        {
+          "id": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+          "type": "basic.code",
+          "data": {
+            "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
+            "params": [],
+            "ports": {
+              "in": [
+                {
+                  "name": "clk"
+                },
+                {
+                  "name": "fin"
+                },
+                {
+                  "name": "opcode",
+                  "range": "[5:0]",
+                  "size": 6
+                },
+                {
+                  "name": "regs_ok"
+                },
+                {
+                  "name": "exec"
+                }
+              ],
+              "out": [
+                {
+                  "name": "regDest"
+                },
+                {
+                  "name": "regwrite"
+                },
+                {
+                  "name": "jump"
+                },
+                {
+                  "name": "Aluop",
+                  "range": "[1:0]",
+                  "size": 2
+                },
+                {
+                  "name": "error"
+                },
+                {
+                  "name": "o_fin"
+                },
+                {
+                  "name": "memtoreg"
+                },
+                {
+                  "name": "alusrc"
+                },
+                {
+                  "name": "memwrite"
+                },
+                {
+                  "name": "beq"
+                },
+                {
+                  "name": "incPC"
+                }
+              ]
+            }
+          },
+          "position": {
+            "x": 760,
+            "y": 280
+          },
+          "size": {
+            "width": 488,
+            "height": 488
+          }
         }
       ],
       "wires": [
@@ -1512,7 +1512,7 @@
           },
           "vertices": [
             {
-              "x": 664,
+              "x": 632,
               "y": 272
             }
           ],
@@ -2074,7 +2074,7 @@
           "vertices": [
             {
               "x": 616,
-              "y": 192
+              "y": 184
             }
           ],
           "size": 6
@@ -2177,7 +2177,13 @@
           "target": {
             "block": "1bcd5d47-258b-429b-9a20-a25869d9e4a4",
             "port": "8e71d5d1-387d-4eaa-8666-74695ebfb74d"
-          }
+          },
+          "vertices": [
+            {
+              "x": 112,
+              "y": 832
+            }
+          ]
         },
         {
           "source": {
@@ -2313,8 +2319,8 @@
           },
           "vertices": [
             {
-              "x": 432,
-              "y": 168
+              "x": 616,
+              "y": 240
             }
           ],
           "size": 6
