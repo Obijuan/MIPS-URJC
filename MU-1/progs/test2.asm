@@ -1,3 +1,9 @@
+.data
+.space 32
+.byte 0xFF, 0xAA
+
+.text
+
 addiu $2,$0,0x01
 addiu $1,$1,0x01
 addiu $1,$1,0x01
