@@ -400,8 +400,8 @@
             "readonly": true
           },
           "position": {
-            "x": 928,
-            "y": 704
+            "x": 744,
+            "y": 88
           },
           "size": {
             "width": 200,
@@ -434,22 +434,6 @@
           "size": {
             "width": 208,
             "height": 40
-          }
-        },
-        {
-          "id": "4da902c1-3d47-45cf-93cb-20cf486a030c",
-          "type": "basic.info",
-          "data": {
-            "info": "R1 seleccionado permanentemente  \npara visualizar en los LEDs",
-            "readonly": true
-          },
-          "position": {
-            "x": -616,
-            "y": 688
-          },
-          "size": {
-            "width": 280,
-            "height": 64
           }
         },
         {
@@ -873,80 +857,6 @@
           }
         },
         {
-          "id": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-          "type": "basic.code",
-          "data": {
-            "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "clk"
-                },
-                {
-                  "name": "opcode",
-                  "range": "[5:0]",
-                  "size": 6
-                },
-                {
-                  "name": "fin"
-                },
-                {
-                  "name": "regs_ok"
-                },
-                {
-                  "name": "exec"
-                }
-              ],
-              "out": [
-                {
-                  "name": "regDest"
-                },
-                {
-                  "name": "regwrite"
-                },
-                {
-                  "name": "jump"
-                },
-                {
-                  "name": "alusrc"
-                },
-                {
-                  "name": "Aluop",
-                  "range": "[1:0]",
-                  "size": 2
-                },
-                {
-                  "name": "beq"
-                },
-                {
-                  "name": "memwrite"
-                },
-                {
-                  "name": "memtoreg"
-                },
-                {
-                  "name": "o_fin"
-                },
-                {
-                  "name": "error"
-                },
-                {
-                  "name": "incPC"
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 728,
-            "y": 184
-          },
-          "size": {
-            "width": 488,
-            "height": 488
-          }
-        },
-        {
           "id": "bbb50aab-5308-4f3b-b229-d1dca5e72f13",
           "type": "e4ee30c2965d638b68948a4e5023ce772faad051",
           "position": {
@@ -956,6 +866,18 @@
           "size": {
             "width": 96,
             "height": 192
+          }
+        },
+        {
+          "id": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+          "type": "526a53901668e41fa2b563d6a9bdbfcfff0766ef",
+          "position": {
+            "x": 848,
+            "y": 184
+          },
+          "size": {
+            "width": 96,
+            "height": 352
           }
         }
       ],
@@ -987,8 +909,8 @@
             "port": "997db8c4-b772-49d8-83e7-4427aff720e6"
           },
           "target": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "exec"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423"
           }
         },
         {
@@ -1014,8 +936,8 @@
             "port": "1ab41d85-250a-4dd4-833d-d11379dea9af"
           },
           "target": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "regs_ok"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "3e05a72d-e524-4463-be45-28e5d84f70f6"
           },
           "vertices": [
             {
@@ -1079,8 +1001,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "alusrc"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "235a2558-f924-4678-ad01-f8f8f243680a"
           },
           "target": {
             "block": "aa4b4043-11c7-4bf6-b7fb-5f3595a9d42b",
@@ -1107,8 +1029,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "regDest"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2"
           },
           "target": {
             "block": "b0a71560-c483-4ad9-9d4a-e7fb409b7faf",
@@ -1213,8 +1135,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "memtoreg"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029"
           },
           "target": {
             "block": "0532778b-c71f-4dcb-87bf-682bbaba8326",
@@ -1223,8 +1145,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "regwrite"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "871882ab-9320-4751-8aaa-593c067de942"
           },
           "target": {
             "block": "d1193c41-4d26-4075-a9d8-13a06e32fd85",
@@ -1243,8 +1165,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "memwrite"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "0f9aeb5b-5991-4083-9da5-cf7653450be7"
           },
           "target": {
             "block": "fca1dc78-1ac7-4248-9cc8-75899b1864be",
@@ -1264,8 +1186,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "incPC"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "47eddfd5-6ef1-4265-b902-5ecf75201fce"
           },
           "target": {
             "block": "1bcd5d47-258b-429b-9a20-a25869d9e4a4",
@@ -1297,8 +1219,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "jump"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "0c226e65-38fe-4ae0-8016-42bb3ed260f2"
           },
           "target": {
             "block": "b1fe0811-ba21-4642-abb4-1be9abf2f0a5",
@@ -1313,8 +1235,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "beq"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "f02c1b23-a792-46d9-80d1-ad467bfd6724"
           },
           "target": {
             "block": "943e48b4-aec3-41cd-9110-1febebc15e48",
@@ -1517,28 +1439,16 @@
         {
           "source": {
             "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
-            "port": "1a3f2e03-fa49-4b5a-9383-1c84f84a7e93"
-          },
-          "target": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "opcode"
-          },
-          "vertices": [],
-          "size": 6
-        },
-        {
-          "source": {
-            "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
             "port": "57e30843-5f0f-4222-a36b-0b3f69251e92"
           },
           "target": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "fin"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "58cddceb-eae2-4c22-abed-27516a835569"
           },
           "vertices": [
             {
-              "x": 632,
-              "y": 416
+              "x": 656,
+              "y": 328
             }
           ]
         },
@@ -1555,8 +1465,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "Aluop"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "efe65228-353f-4641-a47b-18878a932254"
           },
           "target": {
             "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
@@ -1604,8 +1514,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "error"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "0c5d2f95-a9f2-4460-a22d-eccc447147ff"
           },
           "target": {
             "block": "bbb50aab-5308-4f3b-b229-d1dca5e72f13",
@@ -1631,8 +1541,8 @@
         },
         {
           "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "o_fin"
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "5d1844f7-8e54-4aff-b034-4914481cbece"
           },
           "target": {
             "block": "bbb50aab-5308-4f3b-b229-d1dca5e72f13",
@@ -1689,6 +1599,23 @@
             "port": "in"
           },
           "size": 8
+        },
+        {
+          "source": {
+            "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
+            "port": "1a3f2e03-fa49-4b5a-9383-1c84f84a7e93"
+          },
+          "target": {
+            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "port": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44"
+          },
+          "vertices": [
+            {
+              "x": 704,
+              "y": 256
+            }
+          ],
+          "size": 6
         }
       ]
     }
@@ -6156,6 +6083,444 @@
               "target": {
                 "block": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
                 "port": "HZ"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "526a53901668e41fa2b563d6a9bdbfcfff0766ef": {
+      "package": {
+        "name": "UC",
+        "version": "1.0",
+        "description": "Unidad de control",
+        "author": "Juan González-Gómez (obijuan)",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
+              "type": "basic.output",
+              "data": {
+                "name": "regDest"
+              },
+              "position": {
+                "x": 776,
+                "y": -64
+              }
+            },
+            {
+              "id": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": -32,
+                "y": -8
+              }
+            },
+            {
+              "id": "871882ab-9320-4751-8aaa-593c067de942",
+              "type": "basic.output",
+              "data": {
+                "name": "regwrite"
+              },
+              "position": {
+                "x": 800,
+                "y": 8
+              }
+            },
+            {
+              "id": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
+              "type": "basic.output",
+              "data": {
+                "name": "jump"
+              },
+              "position": {
+                "x": 816,
+                "y": 72
+              }
+            },
+            {
+              "id": "235a2558-f924-4678-ad01-f8f8f243680a",
+              "type": "basic.output",
+              "data": {
+                "name": "alusrc"
+              },
+              "position": {
+                "x": 840,
+                "y": 128
+              }
+            },
+            {
+              "id": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
+              "type": "basic.input",
+              "data": {
+                "name": "op",
+                "range": "[5:0]",
+                "clock": false,
+                "size": 6
+              },
+              "position": {
+                "x": -40,
+                "y": 136
+              }
+            },
+            {
+              "id": "efe65228-353f-4641-a47b-18878a932254",
+              "type": "basic.output",
+              "data": {
+                "name": "Aluop",
+                "range": "[1:0]",
+                "size": 2
+              },
+              "position": {
+                "x": 840,
+                "y": 192
+              }
+            },
+            {
+              "id": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+              "type": "basic.output",
+              "data": {
+                "name": "beq"
+              },
+              "position": {
+                "x": 840,
+                "y": 240
+              }
+            },
+            {
+              "id": "58cddceb-eae2-4c22-abed-27516a835569",
+              "type": "basic.input",
+              "data": {
+                "name": "fin",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 240
+              }
+            },
+            {
+              "id": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
+              "type": "basic.output",
+              "data": {
+                "name": "memwrite"
+              },
+              "position": {
+                "x": 840,
+                "y": 296
+              }
+            },
+            {
+              "id": "3e05a72d-e524-4463-be45-28e5d84f70f6",
+              "type": "basic.input",
+              "data": {
+                "name": "regs_ok",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 336
+              }
+            },
+            {
+              "id": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
+              "type": "basic.output",
+              "data": {
+                "name": "memtoreg"
+              },
+              "position": {
+                "x": 832,
+                "y": 360
+              }
+            },
+            {
+              "id": "5d1844f7-8e54-4aff-b034-4914481cbece",
+              "type": "basic.output",
+              "data": {
+                "name": "o_fin"
+              },
+              "position": {
+                "x": 808,
+                "y": 416
+              }
+            },
+            {
+              "id": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
+              "type": "basic.input",
+              "data": {
+                "name": "exec",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 464
+              }
+            },
+            {
+              "id": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
+              "type": "basic.output",
+              "data": {
+                "name": "error"
+              },
+              "position": {
+                "x": 784,
+                "y": 480
+              }
+            },
+            {
+              "id": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
+              "type": "basic.output",
+              "data": {
+                "name": "incPC"
+              },
+              "position": {
+                "x": 752,
+                "y": 536
+              }
+            },
+            {
+              "id": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "opcode",
+                      "range": "[5:0]",
+                      "size": 6
+                    },
+                    {
+                      "name": "fin"
+                    },
+                    {
+                      "name": "regs_ok"
+                    },
+                    {
+                      "name": "exec"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "regDest"
+                    },
+                    {
+                      "name": "regwrite"
+                    },
+                    {
+                      "name": "jump"
+                    },
+                    {
+                      "name": "alusrc"
+                    },
+                    {
+                      "name": "Aluop",
+                      "range": "[1:0]",
+                      "size": 2
+                    },
+                    {
+                      "name": "beq"
+                    },
+                    {
+                      "name": "memwrite"
+                    },
+                    {
+                      "name": "memtoreg"
+                    },
+                    {
+                      "name": "o_fin"
+                    },
+                    {
+                      "name": "error"
+                    },
+                    {
+                      "name": "incPC"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 168,
+                "y": 24
+              },
+              "size": {
+                "width": 488,
+                "height": 488
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regDest"
+              },
+              "target": {
+                "block": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regwrite"
+              },
+              "target": {
+                "block": "871882ab-9320-4751-8aaa-593c067de942",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "jump"
+              },
+              "target": {
+                "block": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "alusrc"
+              },
+              "target": {
+                "block": "235a2558-f924-4678-ad01-f8f8f243680a",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "Aluop"
+              },
+              "target": {
+                "block": "efe65228-353f-4641-a47b-18878a932254",
+                "port": "in"
+              },
+              "size": 2
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "beq"
+              },
+              "target": {
+                "block": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "incPC"
+              },
+              "target": {
+                "block": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "error"
+              },
+              "target": {
+                "block": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "o_fin"
+              },
+              "target": {
+                "block": "5d1844f7-8e54-4aff-b034-4914481cbece",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "memtoreg"
+              },
+              "target": {
+                "block": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "memwrite"
+              },
+              "target": {
+                "block": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "opcode"
+              },
+              "size": 6
+            },
+            {
+              "source": {
+                "block": "58cddceb-eae2-4c22-abed-27516a835569",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "fin"
+              }
+            },
+            {
+              "source": {
+                "block": "3e05a72d-e524-4463-be45-28e5d84f70f6",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regs_ok"
+              }
+            },
+            {
+              "source": {
+                "block": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "exec"
               }
             }
           ]
