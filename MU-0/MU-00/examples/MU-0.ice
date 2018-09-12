@@ -554,8 +554,8 @@
             "readonly": true
           },
           "position": {
-            "x": 1680,
-            "y": -16
+            "x": 1768,
+            "y": -312
           },
           "size": {
             "width": 104,
@@ -953,49 +953,12 @@
           "id": "aa4b4043-11c7-4bf6-b7fb-5f3595a9d42b",
           "type": "2d28667fd5e481271e7b05adb00d8e670a2a56ee",
           "position": {
-            "x": 1416,
+            "x": 1352,
             "y": -32
           },
           "size": {
             "width": 96,
             "height": 96
-          }
-        },
-        {
-          "id": "0012047b-17b7-456e-a2ed-d22d42feb0e6",
-          "type": "basic.code",
-          "data": {
-            "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nwire [3:0] f = func[3:0];\n\nwire is_and = Aluop[1] & (f == 4'b0100);\nwire is_or =  Aluop[1] & (f == 4'b0101);\nwire is_sum = (Aluop == 2'b00) | (Aluop[1] & (f == 4'b0000));\nwire is_sub = (Aluop[0]) | (Aluop[1] & (f == 4'b0010));\nwire is_slt = (Aluop[1] & (f == 4'b1010));\n\nassign k = is_sum ? SUM : \n           is_and ? AND : \n           is_or  ? OR  : \n           is_sub ? SUB : \n           is_slt ? SLT : 3'b000;\n           \n           ",
-            "params": [],
-            "ports": {
-              "in": [
-                {
-                  "name": "func",
-                  "range": "[5:0]",
-                  "size": 6
-                },
-                {
-                  "name": "Aluop",
-                  "range": "[1:0]",
-                  "size": 2
-                }
-              ],
-              "out": [
-                {
-                  "name": "k",
-                  "range": "[2:0]",
-                  "size": 3
-                }
-              ]
-            }
-          },
-          "position": {
-            "x": 1480,
-            "y": 128
-          },
-          "size": {
-            "width": 544,
-            "height": 256
           }
         },
         {
@@ -1415,6 +1378,18 @@
           "size": {
             "width": 96,
             "height": 96
+          }
+        },
+        {
+          "id": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+          "type": "68808939fd4bae0072f3158695587610a8313b3c",
+          "position": {
+            "x": 1456,
+            "y": 176
+          },
+          "size": {
+            "width": 96,
+            "height": 64
           }
         }
       ],
@@ -1949,8 +1924,8 @@
         },
         {
           "source": {
-            "block": "0012047b-17b7-456e-a2ed-d22d42feb0e6",
-            "port": "k"
+            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "port": "14d45c76-ff49-40c1-b72d-0f68f56de2fe"
           },
           "target": {
             "block": "c658e799-9027-44cb-a982-6ec190646715",
@@ -1963,17 +1938,6 @@
             }
           ],
           "size": 3
-        },
-        {
-          "source": {
-            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
-            "port": "Aluop"
-          },
-          "target": {
-            "block": "0012047b-17b7-456e-a2ed-d22d42feb0e6",
-            "port": "Aluop"
-          },
-          "size": 2
         },
         {
           "source": {
@@ -2308,17 +2272,6 @@
         {
           "source": {
             "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
-            "port": "323ee779-25a9-473c-80bc-6f3d0ee04edd"
-          },
-          "target": {
-            "block": "0012047b-17b7-456e-a2ed-d22d42feb0e6",
-            "port": "func"
-          },
-          "size": 6
-        },
-        {
-          "source": {
-            "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
             "port": "1a3f2e03-fa49-4b5a-9383-1c84f84a7e93"
           },
           "target": {
@@ -2343,6 +2296,28 @@
               "y": 440
             }
           ]
+        },
+        {
+          "source": {
+            "block": "bfe41e6e-22a0-452e-b3f4-2d8782d99472",
+            "port": "323ee779-25a9-473c-80bc-6f3d0ee04edd"
+          },
+          "target": {
+            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "port": "d8349993-e27c-4925-97af-424a847faf35"
+          },
+          "size": 6
+        },
+        {
+          "source": {
+            "block": "b13fcc9e-1019-4648-95ae-12ebea1bf399",
+            "port": "Aluop"
+          },
+          "target": {
+            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "port": "800daa07-10cd-4fdd-b4bb-cb98b66867bd"
+          },
+          "size": 2
         }
       ]
     }
@@ -5589,6 +5564,134 @@
                 "block": "57e30843-5f0f-4222-a36b-0b3f69251e92",
                 "port": "in"
               }
+            }
+          ]
+        }
+      }
+    },
+    "68808939fd4bae0072f3158695587610a8313b3c": {
+      "package": {
+        "name": "AluControl",
+        "version": "1.0",
+        "description": "Lógica combinacional para la control de la ALU",
+        "author": "Juan González-Gómez",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "d8349993-e27c-4925-97af-424a847faf35",
+              "type": "basic.input",
+              "data": {
+                "name": "f",
+                "range": "[5:0]",
+                "clock": false,
+                "size": 6
+              },
+              "position": {
+                "x": 0,
+                "y": 168
+              }
+            },
+            {
+              "id": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
+              "type": "basic.output",
+              "data": {
+                "name": "",
+                "range": "[2:0]",
+                "size": 3
+              },
+              "position": {
+                "x": 800,
+                "y": 232
+              }
+            },
+            {
+              "id": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
+              "type": "basic.input",
+              "data": {
+                "name": "Aop",
+                "range": "[1:0]",
+                "clock": false,
+                "size": 2
+              },
+              "position": {
+                "x": 0,
+                "y": 296
+              }
+            },
+            {
+              "id": "e34d145a-6d28-41d7-ba52-62452c42a147",
+              "type": "basic.code",
+              "data": {
+                "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nwire [3:0] f = func[3:0];\n\nwire is_and = Aluop[1] & (f == 4'b0100);\nwire is_or =  Aluop[1] & (f == 4'b0101);\nwire is_sum = (Aluop == 2'b00) | (Aluop[1] & (f == 4'b0000));\nwire is_sub = (Aluop[0]) | (Aluop[1] & (f == 4'b0010));\nwire is_slt = (Aluop[1] & (f == 4'b1010));\n\nassign k = is_sum ? SUM : \n           is_and ? AND : \n           is_or  ? OR  : \n           is_sub ? SUB : \n           is_slt ? SLT : 3'b000;\n           \n           ",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "func",
+                      "range": "[5:0]",
+                      "size": 6
+                    },
+                    {
+                      "name": "Aluop",
+                      "range": "[1:0]",
+                      "size": 2
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "k",
+                      "range": "[2:0]",
+                      "size": 3
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 192,
+                "y": 136
+              },
+              "size": {
+                "width": 544,
+                "height": 256
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "k"
+              },
+              "target": {
+                "block": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
+                "port": "in"
+              },
+              "size": 3
+            },
+            {
+              "source": {
+                "block": "d8349993-e27c-4925-97af-424a847faf35",
+                "port": "out"
+              },
+              "target": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "func"
+              },
+              "size": 6
+            },
+            {
+              "source": {
+                "block": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
+                "port": "out"
+              },
+              "target": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "Aluop"
+              },
+              "size": 2
             }
           ]
         }
