@@ -319,17 +319,17 @@
           "type": "basic.memory",
           "data": {
             "name": "",
-            "list": "0\n0\n0\n0\n0\n0\n0\n0",
+            "list": "240100ff\n240200aa\n00000000\n00411026\n08000c01",
             "local": false,
             "format": 10
           },
           "position": {
-            "x": -24,
-            "y": -288
+            "x": 0,
+            "y": -320
           },
           "size": {
-            "width": 152,
-            "height": 128
+            "width": 160,
+            "height": 144
           }
         },
         {
@@ -895,30 +895,6 @@
           }
         },
         {
-          "id": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
-          "type": "68808939fd4bae0072f3158695587610a8313b3c",
-          "position": {
-            "x": 1208,
-            "y": 144
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "c26f485b-28a1-428e-95a1-880b5ab94177",
-          "type": "cfc8ee0675cfc6c960b54921893a7be594912a82",
-          "position": {
-            "x": 1408,
-            "y": -184
-          },
-          "size": {
-            "width": 96,
-            "height": 96
-          }
-        },
-        {
           "id": "fca1dc78-1ac7-4248-9cc8-75899b1864be",
           "type": "3d1b40d4d29c024e44e997a214ea0bc32ddbd20f",
           "position": {
@@ -1007,7 +983,7 @@
           }
         },
         {
-          "id": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+          "id": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
           "type": "8e07e7ca4a16473f651901f54fa7df92b615be14",
           "position": {
             "x": 704,
@@ -1016,6 +992,30 @@
           "size": {
             "width": 96,
             "height": 384
+          }
+        },
+        {
+          "id": "baa49e06-b3d8-4635-9e97-9e4bc20b54de",
+          "type": "c153027a4a6136f82f2c90c4b7158d942a3afe54",
+          "position": {
+            "x": 1208,
+            "y": 144
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "36b82b90-aba5-4e07-acff-32ff4589b791",
+          "type": "50049590dfd54bbcecbccfbaae164895aafea036",
+          "position": {
+            "x": 1408,
+            "y": -184
+          },
+          "size": {
+            "width": 96,
+            "height": 96
           }
         }
       ],
@@ -1048,7 +1048,7 @@
             "port": "f9c417e2-5f62-4469-8ed4-4a6e1f7306c6"
           },
           "target": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "5c8e3b80-8f79-46e6-851c-a06fc8f661a6"
           },
           "vertices": [
@@ -1065,7 +1065,7 @@
             "port": "1ab41d85-250a-4dd4-833d-d11379dea9af"
           },
           "target": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "3e05a72d-e524-4463-be45-28e5d84f70f6"
           },
           "vertices": [
@@ -1123,7 +1123,7 @@
             "port": "bf25756a-65a4-4b09-915d-494010d6f4ff"
           },
           "target": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "b2b90250-1a53-451e-9aa5-efb8f7d0838b"
           },
           "vertices": [
@@ -1136,7 +1136,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "235a2558-f924-4678-ad01-f8f8f243680a"
           },
           "target": {
@@ -1169,7 +1169,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2"
           },
           "target": {
@@ -1253,11 +1253,11 @@
         },
         {
           "source": {
-            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "block": "baa49e06-b3d8-4635-9e97-9e4bc20b54de",
             "port": "14d45c76-ff49-40c1-b72d-0f68f56de2fe"
           },
           "target": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "c03149fa-cccd-423d-beb9-7d09ef0f5ccf"
           },
           "vertices": [
@@ -1270,7 +1270,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029"
           },
           "target": {
@@ -1280,7 +1280,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "871882ab-9320-4751-8aaa-593c067de942"
           },
           "target": {
@@ -1296,7 +1296,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "0f9aeb5b-5991-4083-9da5-cf7653450be7"
           },
           "target": {
@@ -1317,7 +1317,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "47eddfd5-6ef1-4265-b902-5ecf75201fce"
           },
           "target": {
@@ -1350,7 +1350,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "0c226e65-38fe-4ae0-8016-42bb3ed260f2"
           },
           "target": {
@@ -1366,7 +1366,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "f02c1b23-a792-46d9-80d1-ad467bfd6724"
           },
           "target": {
@@ -1376,7 +1376,7 @@
         },
         {
           "source": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
           },
           "target": {
@@ -1553,7 +1553,7 @@
             "port": "57e30843-5f0f-4222-a36b-0b3f69251e92"
           },
           "target": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "58cddceb-eae2-4c22-abed-27516a835569"
           },
           "vertices": [
@@ -1569,25 +1569,25 @@
             "port": "323ee779-25a9-473c-80bc-6f3d0ee04edd"
           },
           "target": {
-            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "block": "baa49e06-b3d8-4635-9e97-9e4bc20b54de",
             "port": "d8349993-e27c-4925-97af-424a847faf35"
           },
           "size": 6
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "efe65228-353f-4641-a47b-18878a932254"
           },
           "target": {
-            "block": "39ff7db9-4d55-40ff-a8ff-18bf2e2a372c",
+            "block": "baa49e06-b3d8-4635-9e97-9e4bc20b54de",
             "port": "800daa07-10cd-4fdd-b4bb-cb98b66867bd"
           },
           "size": 2
         },
         {
           "source": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3d226468-60ab-4886-ad32-3116a863911c"
           },
           "target": {
@@ -1604,7 +1604,7 @@
         },
         {
           "source": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3d226468-60ab-4886-ad32-3116a863911c"
           },
           "target": {
@@ -1621,7 +1621,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "0c5d2f95-a9f2-4460-a22d-eccc447147ff"
           },
           "target": {
@@ -1637,7 +1637,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "5d1844f7-8e54-4aff-b034-4914481cbece"
           },
           "target": {
@@ -1702,7 +1702,7 @@
             "port": "1a3f2e03-fa49-4b5a-9383-1c84f84a7e93"
           },
           "target": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44"
           },
           "vertices": [],
@@ -1720,7 +1720,7 @@
         },
         {
           "source": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
           },
           "target": {
@@ -1730,7 +1730,7 @@
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "9556b756-b40d-406d-9083-3db71ad006d8"
           },
           "target": {
@@ -1796,13 +1796,13 @@
             "port": "997db8c4-b772-49d8-83e7-4427aff720e6"
           },
           "target": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423"
           }
         },
         {
           "source": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "9556b756-b40d-406d-9083-3db71ad006d8"
           },
           "target": {
@@ -1812,7 +1812,7 @@
         },
         {
           "source": {
-            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
           },
           "target": {
@@ -1852,7 +1852,7 @@
             "port": "b27c1a97-5265-4344-96d7-396e48e95691"
           },
           "target": {
-            "block": "c90baf9b-ec7c-45f3-8340-33043dd0c704",
+            "block": "4ed4046a-8724-4a18-82a6-c2c01a9903ce",
             "port": "46eb4962-97e4-4f6c-a8f4-524c22f68d26"
           },
           "size": 3
@@ -4020,316 +4020,6 @@
                 "block": "57e30843-5f0f-4222-a36b-0b3f69251e92",
                 "port": "in"
               }
-            }
-          ]
-        }
-      }
-    },
-    "68808939fd4bae0072f3158695587610a8313b3c": {
-      "package": {
-        "name": "AluControl",
-        "version": "1.0",
-        "description": "Lógica combinacional para la control de la ALU",
-        "author": "Juan González-Gómez",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "d8349993-e27c-4925-97af-424a847faf35",
-              "type": "basic.input",
-              "data": {
-                "name": "f",
-                "range": "[5:0]",
-                "clock": false,
-                "size": 6
-              },
-              "position": {
-                "x": 0,
-                "y": 168
-              }
-            },
-            {
-              "id": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
-              "type": "basic.output",
-              "data": {
-                "name": "",
-                "range": "[2:0]",
-                "size": 3
-              },
-              "position": {
-                "x": 800,
-                "y": 232
-              }
-            },
-            {
-              "id": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
-              "type": "basic.input",
-              "data": {
-                "name": "Aop",
-                "range": "[1:0]",
-                "clock": false,
-                "size": 2
-              },
-              "position": {
-                "x": 0,
-                "y": 296
-              }
-            },
-            {
-              "id": "e34d145a-6d28-41d7-ba52-62452c42a147",
-              "type": "basic.code",
-              "data": {
-                "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nwire [3:0] f = func[3:0];\n\nwire is_and = Aluop[1] & (f == 4'b0100);\nwire is_or =  Aluop[1] & (f == 4'b0101);\nwire is_sum = (Aluop == 2'b00) | (Aluop[1] & (f == 4'b0000));\nwire is_sub = (Aluop[0]) | (Aluop[1] & (f == 4'b0010));\nwire is_slt = (Aluop[1] & (f == 4'b1010));\n\nassign k = is_sum ? SUM : \n           is_and ? AND : \n           is_or  ? OR  : \n           is_sub ? SUB : \n           is_slt ? SLT : 3'b000;\n           \n           ",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "func",
-                      "range": "[5:0]",
-                      "size": 6
-                    },
-                    {
-                      "name": "Aluop",
-                      "range": "[1:0]",
-                      "size": 2
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "k",
-                      "range": "[2:0]",
-                      "size": 3
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 192,
-                "y": 136
-              },
-              "size": {
-                "width": 544,
-                "height": 256
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
-                "port": "k"
-              },
-              "target": {
-                "block": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
-                "port": "in"
-              },
-              "size": 3
-            },
-            {
-              "source": {
-                "block": "d8349993-e27c-4925-97af-424a847faf35",
-                "port": "out"
-              },
-              "target": {
-                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
-                "port": "func"
-              },
-              "size": 6
-            },
-            {
-              "source": {
-                "block": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
-                "port": "out"
-              },
-              "target": {
-                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
-                "port": "Aluop"
-              },
-              "size": 2
-            }
-          ]
-        }
-      }
-    },
-    "cfc8ee0675cfc6c960b54921893a7be594912a82": {
-      "package": {
-        "name": "Alu",
-        "version": "1.0",
-        "description": "Unidad aritmético-lógica",
-        "author": "Juan González-Gómez",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "5c8e3b80-8f79-46e6-851c-a06fc8f661a6",
-              "type": "basic.input",
-              "data": {
-                "name": "",
-                "range": "[7:0]",
-                "clock": false,
-                "size": 8
-              },
-              "position": {
-                "x": -16,
-                "y": 112
-              }
-            },
-            {
-              "id": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb",
-              "type": "basic.output",
-              "data": {
-                "name": "zero"
-              },
-              "position": {
-                "x": 584,
-                "y": 128
-              }
-            },
-            {
-              "id": "b2b90250-1a53-451e-9aa5-efb8f7d0838b",
-              "type": "basic.input",
-              "data": {
-                "name": "",
-                "range": "[7:0]",
-                "clock": false,
-                "size": 8
-              },
-              "position": {
-                "x": -16,
-                "y": 176
-              }
-            },
-            {
-              "id": "3d226468-60ab-4886-ad32-3116a863911c",
-              "type": "basic.output",
-              "data": {
-                "name": "",
-                "range": "[7:0]",
-                "size": 8
-              },
-              "position": {
-                "x": 600,
-                "y": 216
-              }
-            },
-            {
-              "id": "c03149fa-cccd-423d-beb9-7d09ef0f5ccf",
-              "type": "basic.input",
-              "data": {
-                "name": "op",
-                "range": "[2:0]",
-                "clock": false,
-                "size": 3
-              },
-              "position": {
-                "x": -16,
-                "y": 232
-              }
-            },
-            {
-              "id": "e1ded469-44fc-40c7-b657-373fcc34b264",
-              "type": "basic.code",
-              "data": {
-                "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nreg r;\n\nassign zero = (r == 0);\n\nalways @(*) begin\n\ncase (operation)\n  AND: r = op1 & op2;\n  SUM: r = op1 + op2;\n  OR: r = op1 | op2;\n  SUB: r = op1 - op2;\n  SLT: r = (op1 < op2) ? 8'h01 : 8'h00;\n\n  default:\n    r = 0;\n\nendcase\nend\n\n",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "op1",
-                      "range": "[7:0]",
-                      "size": 8
-                    },
-                    {
-                      "name": "op2",
-                      "range": "[7:0]",
-                      "size": 8
-                    },
-                    {
-                      "name": "operation",
-                      "range": "[2:0]",
-                      "size": 3
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "zero"
-                    },
-                    {
-                      "name": "r",
-                      "range": "[7:0]",
-                      "size": 8
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 200,
-                "y": 112
-              },
-              "size": {
-                "width": 304,
-                "height": 184
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
-                "port": "zero"
-              },
-              "target": {
-                "block": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
-                "port": "r"
-              },
-              "target": {
-                "block": "3d226468-60ab-4886-ad32-3116a863911c",
-                "port": "in"
-              },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "5c8e3b80-8f79-46e6-851c-a06fc8f661a6",
-                "port": "out"
-              },
-              "target": {
-                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
-                "port": "op1"
-              },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "b2b90250-1a53-451e-9aa5-efb8f7d0838b",
-                "port": "out"
-              },
-              "target": {
-                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
-                "port": "op2"
-              },
-              "size": 8
-            },
-            {
-              "source": {
-                "block": "c03149fa-cccd-423d-beb9-7d09ef0f5ccf",
-                "port": "out"
-              },
-              "target": {
-                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
-                "port": "operation"
-              },
-              "size": 3
             }
           ]
         }
@@ -7671,6 +7361,316 @@
               "target": {
                 "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
                 "port": "pc"
+              },
+              "size": 3
+            }
+          ]
+        }
+      }
+    },
+    "c153027a4a6136f82f2c90c4b7158d942a3afe54": {
+      "package": {
+        "name": "AluControl",
+        "version": "1.0",
+        "description": "Lógica combinacional para la control de la ALU",
+        "author": "Juan González-Gómez",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "d8349993-e27c-4925-97af-424a847faf35",
+              "type": "basic.input",
+              "data": {
+                "name": "f",
+                "range": "[5:0]",
+                "clock": false,
+                "size": 6
+              },
+              "position": {
+                "x": 0,
+                "y": 168
+              }
+            },
+            {
+              "id": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
+              "type": "basic.output",
+              "data": {
+                "name": "",
+                "range": "[2:0]",
+                "size": 3
+              },
+              "position": {
+                "x": 800,
+                "y": 232
+              }
+            },
+            {
+              "id": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
+              "type": "basic.input",
+              "data": {
+                "name": "Aop",
+                "range": "[1:0]",
+                "clock": false,
+                "size": 2
+              },
+              "position": {
+                "x": 0,
+                "y": 296
+              }
+            },
+            {
+              "id": "e34d145a-6d28-41d7-ba52-62452c42a147",
+              "type": "basic.code",
+              "data": {
+                "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam XOR = 3'b011;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nwire [3:0] f = func[3:0];\n\nwire is_and = Aluop[1] & (f == 4'b0100);\nwire is_or =  Aluop[1] & (f == 4'b0101);\nwire is_xor = Aluop[1] & (f == 4'b0110);\nwire is_sum = (Aluop == 2'b00) | (Aluop[1] & (f == 4'b0000));\nwire is_sub = (Aluop[0]) | (Aluop[1] & (f == 4'b0010));\nwire is_slt = (Aluop[1] & (f == 4'b1010));\n\nassign k = is_sum ? SUM : \n           is_and ? AND : \n           is_or  ? OR  : \n           is_sub ? SUB : \n           is_slt ? SLT : \n           is_xor ? XOR : 3'b000;\n           \n           ",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "func",
+                      "range": "[5:0]",
+                      "size": 6
+                    },
+                    {
+                      "name": "Aluop",
+                      "range": "[1:0]",
+                      "size": 2
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "k",
+                      "range": "[2:0]",
+                      "size": 3
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 192,
+                "y": 136
+              },
+              "size": {
+                "width": 544,
+                "height": 256
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "k"
+              },
+              "target": {
+                "block": "14d45c76-ff49-40c1-b72d-0f68f56de2fe",
+                "port": "in"
+              },
+              "size": 3
+            },
+            {
+              "source": {
+                "block": "d8349993-e27c-4925-97af-424a847faf35",
+                "port": "out"
+              },
+              "target": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "func"
+              },
+              "size": 6
+            },
+            {
+              "source": {
+                "block": "800daa07-10cd-4fdd-b4bb-cb98b66867bd",
+                "port": "out"
+              },
+              "target": {
+                "block": "e34d145a-6d28-41d7-ba52-62452c42a147",
+                "port": "Aluop"
+              },
+              "size": 2
+            }
+          ]
+        }
+      }
+    },
+    "50049590dfd54bbcecbccfbaae164895aafea036": {
+      "package": {
+        "name": "Alu",
+        "version": "1.0",
+        "description": "Unidad aritmético-lógica",
+        "author": "Juan González-Gómez",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "5c8e3b80-8f79-46e6-851c-a06fc8f661a6",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "range": "[7:0]",
+                "clock": false,
+                "size": 8
+              },
+              "position": {
+                "x": -16,
+                "y": 112
+              }
+            },
+            {
+              "id": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb",
+              "type": "basic.output",
+              "data": {
+                "name": "zero"
+              },
+              "position": {
+                "x": 584,
+                "y": 128
+              }
+            },
+            {
+              "id": "b2b90250-1a53-451e-9aa5-efb8f7d0838b",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "range": "[7:0]",
+                "clock": false,
+                "size": 8
+              },
+              "position": {
+                "x": -16,
+                "y": 176
+              }
+            },
+            {
+              "id": "3d226468-60ab-4886-ad32-3116a863911c",
+              "type": "basic.output",
+              "data": {
+                "name": "",
+                "range": "[7:0]",
+                "size": 8
+              },
+              "position": {
+                "x": 600,
+                "y": 216
+              }
+            },
+            {
+              "id": "c03149fa-cccd-423d-beb9-7d09ef0f5ccf",
+              "type": "basic.input",
+              "data": {
+                "name": "op",
+                "range": "[2:0]",
+                "clock": false,
+                "size": 3
+              },
+              "position": {
+                "x": -16,
+                "y": 232
+              }
+            },
+            {
+              "id": "e1ded469-44fc-40c7-b657-373fcc34b264",
+              "type": "basic.code",
+              "data": {
+                "code": "localparam AND = 3'b000;\nlocalparam OR  = 3'b001;\nlocalparam SUM = 3'b010;\nlocalparam XOR = 3'b011;\nlocalparam SUB = 3'b110;\nlocalparam SLT = 3'b111;\n\nreg r;\n\nassign zero = (r == 0);\n\nalways @(*) begin\n\ncase (operation)\n  AND: r = op1 & op2;\n  SUM: r = op1 + op2;\n  OR: r = op1 | op2;\n  XOR: r = op1 ^ op2;\n  SUB: r = op1 - op2;\n  SLT: r = (op1 < op2) ? 8'h01 : 8'h00;\n\n  default:\n    r = 0;\n\nendcase\nend\n\n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "op1",
+                      "range": "[7:0]",
+                      "size": 8
+                    },
+                    {
+                      "name": "op2",
+                      "range": "[7:0]",
+                      "size": 8
+                    },
+                    {
+                      "name": "operation",
+                      "range": "[2:0]",
+                      "size": 3
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "zero"
+                    },
+                    {
+                      "name": "r",
+                      "range": "[7:0]",
+                      "size": 8
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 200,
+                "y": 112
+              },
+              "size": {
+                "width": 304,
+                "height": 184
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
+                "port": "zero"
+              },
+              "target": {
+                "block": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
+                "port": "r"
+              },
+              "target": {
+                "block": "3d226468-60ab-4886-ad32-3116a863911c",
+                "port": "in"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "5c8e3b80-8f79-46e6-851c-a06fc8f661a6",
+                "port": "out"
+              },
+              "target": {
+                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
+                "port": "op1"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "b2b90250-1a53-451e-9aa5-efb8f7d0838b",
+                "port": "out"
+              },
+              "target": {
+                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
+                "port": "op2"
+              },
+              "size": 8
+            },
+            {
+              "source": {
+                "block": "c03149fa-cccd-423d-beb9-7d09ef0f5ccf",
+                "port": "out"
+              },
+              "target": {
+                "block": "e1ded469-44fc-40c7-b657-373fcc34b264",
+                "port": "operation"
               },
               "size": 3
             }
