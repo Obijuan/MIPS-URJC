@@ -315,24 +315,6 @@
           }
         },
         {
-          "id": "c6f74b85-f38a-4230-95ac-25d872cad674",
-          "type": "basic.memory",
-          "data": {
-            "name": "",
-            "list": "240100ff\n240200aa\n00000000\n00411026\n08000c01",
-            "local": false,
-            "format": 10
-          },
-          "position": {
-            "x": 0,
-            "y": -320
-          },
-          "size": {
-            "width": 160,
-            "height": 144
-          }
-        },
-        {
           "id": "46de1d62-8554-406c-a714-4f6b5ef52397",
           "type": "basic.memory",
           "data": {
@@ -342,8 +324,8 @@
             "format": 10
           },
           "position": {
-            "x": 288,
-            "y": -744
+            "x": 0,
+            "y": -312
           },
           "size": {
             "width": 152,
@@ -914,8 +896,8 @@
             "readonly": true
           },
           "position": {
-            "x": 448,
-            "y": -728
+            "x": 160,
+            "y": -296
           },
           "size": {
             "width": 192,
@@ -1710,16 +1692,6 @@
         },
         {
           "source": {
-            "block": "c6f74b85-f38a-4230-95ac-25d872cad674",
-            "port": "memory-out"
-          },
-          "target": {
-            "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
-            "port": "c71c44ac-0500-4eb5-9c1c-4ea21cd78377"
-          }
-        },
-        {
-          "source": {
             "block": "36b82b90-aba5-4e07-acff-32ff4589b791",
             "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
           },
@@ -1856,6 +1828,16 @@
             "port": "46eb4962-97e4-4f6c-a8f4-524c22f68d26"
           },
           "size": 3
+        },
+        {
+          "source": {
+            "block": "46de1d62-8554-406c-a714-4f6b5ef52397",
+            "port": "memory-out"
+          },
+          "target": {
+            "block": "33841a12-4fee-45c6-9b04-3c7c9a37329a",
+            "port": "c71c44ac-0500-4eb5-9c1c-4ea21cd78377"
+          }
         }
       ]
     }
