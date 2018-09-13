@@ -20,43 +20,43 @@
             "pins": [
               {
                 "index": "7",
-                "name": "LED7",
-                "value": "104"
+                "name": "LED0",
+                "value": "95"
               },
               {
                 "index": "6",
-                "name": "LED6",
-                "value": "102"
-              },
-              {
-                "index": "5",
-                "name": "LED5",
-                "value": "101"
-              },
-              {
-                "index": "4",
-                "name": "LED4",
-                "value": "99"
-              },
-              {
-                "index": "3",
-                "name": "LED3",
-                "value": "98"
-              },
-              {
-                "index": "2",
-                "name": "LED2",
-                "value": "97"
-              },
-              {
-                "index": "1",
                 "name": "LED1",
                 "value": "96"
               },
               {
+                "index": "5",
+                "name": "LED2",
+                "value": "97"
+              },
+              {
+                "index": "4",
+                "name": "LED3",
+                "value": "98"
+              },
+              {
+                "index": "3",
+                "name": "LED4",
+                "value": "99"
+              },
+              {
+                "index": "2",
+                "name": "LED5",
+                "value": "101"
+              },
+              {
+                "index": "1",
+                "name": "LED6",
+                "value": "102"
+              },
+              {
                 "index": "0",
-                "name": "LED0",
-                "value": "95"
+                "name": "LED7",
+                "value": "104"
               }
             ],
             "virtual": false
@@ -431,8 +431,8 @@
             "readonly": true
           },
           "position": {
-            "x": 568,
-            "y": 360
+            "x": 680,
+            "y": 112
           },
           "size": {
             "width": 200,
