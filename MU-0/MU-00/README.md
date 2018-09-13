@@ -11,7 +11,22 @@ Procesador educativo MU: MIPS URJC.
 * Install the collection: *Tools > Collections > Add*
 * Load the collection: *Select > Collection*
 
+## Blocks
+* *MU-0*
+  * Adder-3bits
+  * Alu
+  * AluControl
+  * Aux1
+  * DataMemory
+  * Debug
+  * Format
+  * IncPC
+  * PC
+  * Regs
+  * UC
 
+## Examples
+* MU-0
 
 
 ## Authors
