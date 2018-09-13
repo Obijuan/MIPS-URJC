@@ -66,7 +66,7 @@
           },
           "position": {
             "x": 800,
-            "y": 8
+            "y": -8
           }
         },
         {
@@ -84,8 +84,8 @@
             "virtual": true
           },
           "position": {
-            "x": 816,
-            "y": 72
+            "x": 824,
+            "y": 48
           }
         },
         {
@@ -103,8 +103,8 @@
             "virtual": true
           },
           "position": {
-            "x": 840,
-            "y": 128
+            "x": 848,
+            "y": 104
           }
         },
         {
@@ -174,15 +174,15 @@
             "virtual": true
           },
           "position": {
-            "x": 840,
-            "y": 192
+            "x": 864,
+            "y": 152
           }
         },
         {
-          "id": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+          "id": "9556b756-b40d-406d-9083-3db71ad006d8",
           "type": "basic.output",
           "data": {
-            "name": "beq",
+            "name": "bne",
             "pins": [
               {
                 "index": "0",
@@ -193,8 +193,8 @@
             "virtual": true
           },
           "position": {
-            "x": 840,
-            "y": 240
+            "x": 872,
+            "y": 216
           }
         },
         {
@@ -218,6 +218,25 @@
           }
         },
         {
+          "id": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+          "type": "basic.output",
+          "data": {
+            "name": "beq",
+            "pins": [
+              {
+                "index": "0",
+                "name": "",
+                "value": ""
+              }
+            ],
+            "virtual": true
+          },
+          "position": {
+            "x": 848,
+            "y": 280
+          }
+        },
+        {
           "id": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
           "type": "basic.output",
           "data": {
@@ -232,8 +251,8 @@
             "virtual": true
           },
           "position": {
-            "x": 840,
-            "y": 296
+            "x": 848,
+            "y": 336
           }
         },
         {
@@ -272,7 +291,7 @@
           },
           "position": {
             "x": 832,
-            "y": 360
+            "y": 392
           }
         },
         {
@@ -291,7 +310,7 @@
           },
           "position": {
             "x": 808,
-            "y": 416
+            "y": 448
           }
         },
         {
@@ -329,8 +348,8 @@
             "virtual": true
           },
           "position": {
-            "x": 784,
-            "y": 480
+            "x": 776,
+            "y": 512
           }
         },
         {
@@ -348,15 +367,15 @@
             "virtual": true
           },
           "position": {
-            "x": 752,
-            "y": 536
+            "x": 744,
+            "y": 560
           }
         },
         {
           "id": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
           "type": "basic.code",
           "data": {
-            "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
+            "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BNE =   6'b000101;\nlocalparam ADDIU = 6'b001001;\nlocalparam ORI =   6'b001101;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\n\n\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ) | (opcode == BNE);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\nassign bne = (opcode == BNE);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
             "params": [],
             "ports": {
               "in": [
@@ -395,6 +414,9 @@
                   "name": "Aluop",
                   "range": "[1:0]",
                   "size": 2
+                },
+                {
+                  "name": "bne"
                 },
                 {
                   "name": "beq"
@@ -588,6 +610,16 @@
           "target": {
             "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
             "port": "exec"
+          }
+        },
+        {
+          "source": {
+            "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+            "port": "bne"
+          },
+          "target": {
+            "block": "9556b756-b40d-406d-9083-3db71ad006d8",
+            "port": "in"
           }
         }
       ]

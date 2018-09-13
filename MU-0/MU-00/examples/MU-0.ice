@@ -87,6 +87,25 @@
           }
         },
         {
+          "id": "98e73d80-d9c4-4835-b849-229145465d5f",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D12",
+                "value": "143"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1656,
+            "y": -424
+          }
+        },
+        {
           "id": "c6962eb1-0974-4943-bb61-6cc01a9229ad",
           "type": "basic.input",
           "data": {
@@ -113,6 +132,25 @@
           }
         },
         {
+          "id": "108cf776-6453-44f6-a4fb-9d5b2fa62bd5",
+          "type": "basic.output",
+          "data": {
+            "name": "",
+            "pins": [
+              {
+                "index": "0",
+                "name": "D13",
+                "value": "144"
+              }
+            ],
+            "virtual": false
+          },
+          "position": {
+            "x": 1280,
+            "y": 264
+          }
+        },
+        {
           "id": "860c14c6-7a71-419c-a715-bcea5924c2ca",
           "type": "basic.input",
           "data": {
@@ -128,8 +166,8 @@
             "clock": false
           },
           "position": {
-            "x": 256,
-            "y": 456
+            "x": 248,
+            "y": 472
           }
         },
         {
@@ -331,6 +369,24 @@
           }
         },
         {
+          "id": "c6f74b85-f38a-4230-95ac-25d872cad674",
+          "type": "basic.memory",
+          "data": {
+            "name": "",
+            "list": "24020007\n24210001\n1422fffe\n0000000d",
+            "local": false,
+            "format": 10
+          },
+          "position": {
+            "x": -24,
+            "y": -288
+          },
+          "size": {
+            "width": 152,
+            "height": 128
+          }
+        },
+        {
           "id": "46de1d62-8554-406c-a714-4f6b5ef52397",
           "type": "basic.memory",
           "data": {
@@ -340,25 +396,12 @@
             "format": 10
           },
           "position": {
-            "x": -16,
-            "y": -288
+            "x": 288,
+            "y": -744
           },
           "size": {
             "width": 152,
             "height": 128
-          }
-        },
-        {
-          "id": "efc5a961-00fa-47f8-91bd-bdea19661589",
-          "type": "basic.constant",
-          "data": {
-            "name": "",
-            "value": "100",
-            "local": false
-          },
-          "position": {
-            "x": 376,
-            "y": 584
           }
         },
         {
@@ -371,8 +414,8 @@
             "format": 10
           },
           "position": {
-            "x": 1704,
-            "y": -296
+            "x": 1848,
+            "y": -200
           },
           "size": {
             "width": 144,
@@ -399,8 +442,8 @@
           "id": "5bc382b1-12a5-4439-aaba-4ac806b25310",
           "type": "e2b856e09a9329dca4a720ecad63740cfd415268",
           "position": {
-            "x": 416,
-            "y": 440
+            "x": 448,
+            "y": 480
           },
           "size": {
             "width": 96,
@@ -880,23 +923,11 @@
           "type": "3d1b40d4d29c024e44e997a214ea0bc32ddbd20f",
           "position": {
             "x": 1728,
-            "y": -160
+            "y": -80
           },
           "size": {
             "width": 96,
             "height": 128
-          }
-        },
-        {
-          "id": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
-          "type": "526a53901668e41fa2b563d6a9bdbfcfff0766ef",
-          "position": {
-            "x": 704,
-            "y": 168
-          },
-          "size": {
-            "width": 96,
-            "height": 352
           }
         },
         {
@@ -907,36 +938,12 @@
             "readonly": true
           },
           "position": {
-            "x": 144,
-            "y": -272
+            "x": 448,
+            "y": -728
           },
           "size": {
             "width": 192,
             "height": 120
-          }
-        },
-        {
-          "id": "e549f359-3f29-4aa4-8d31-e3e50394424c",
-          "type": "81613874c6152f06c06ed7014bf4235900cfcc30",
-          "position": {
-            "x": 560,
-            "y": 456
-          },
-          "size": {
-            "width": 96,
-            "height": 64
-          }
-        },
-        {
-          "id": "366048dc-10ae-45e0-8cbf-aa8a02c0d05d",
-          "type": "519d315d08b3a8cc1aac53c9d14d2fd81d67033f",
-          "position": {
-            "x": 376,
-            "y": 688
-          },
-          "size": {
-            "width": 96,
-            "height": 64
           }
         },
         {
@@ -949,6 +956,54 @@
           "size": {
             "width": 96,
             "height": 192
+          }
+        },
+        {
+          "id": "60d37fff-f556-499c-8e61-945151b7d45b",
+          "type": "35f267d0df6ffcb7fc33753bc9df9cf083642cca",
+          "position": {
+            "x": 1568,
+            "y": -256
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "b1042669-d826-4675-84cb-e8da60bc38fb",
+          "type": "b2090f68ef94fd3c5c0eaea93eb6ba7e80aff0b6",
+          "position": {
+            "x": 1704,
+            "y": -280
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "a9118b27-0163-4425-ad10-e284d3e680a4",
+          "type": "81613874c6152f06c06ed7014bf4235900cfcc30",
+          "position": {
+            "x": 1856,
+            "y": -264
+          },
+          "size": {
+            "width": 96,
+            "height": 64
+          }
+        },
+        {
+          "id": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
+          "type": "9a6ccc4257a947de429f3e8a43a8a96de70c6a7c",
+          "position": {
+            "x": 704,
+            "y": 168
+          },
+          "size": {
+            "width": 96,
+            "height": 384
           }
         }
       ],
@@ -972,7 +1027,13 @@
           "target": {
             "block": "5bc382b1-12a5-4439-aaba-4ac806b25310",
             "port": "21bc142d-a93a-430d-b37a-326435def9f9"
-          }
+          },
+          "vertices": [
+            {
+              "x": 384,
+              "y": 520
+            }
+          ]
         },
         {
           "source": {
@@ -997,7 +1058,7 @@
             "port": "1ab41d85-250a-4dd4-833d-d11379dea9af"
           },
           "target": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "3e05a72d-e524-4463-be45-28e5d84f70f6"
           },
           "vertices": [
@@ -1068,7 +1129,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "235a2558-f924-4678-ad01-f8f8f243680a"
           },
           "target": {
@@ -1091,12 +1152,17 @@
             "block": "fca1dc78-1ac7-4248-9cc8-75899b1864be",
             "port": "d7bc074a-48f9-4f9e-8845-e5dbf985b020"
           },
-          "vertices": [],
+          "vertices": [
+            {
+              "x": 1584,
+              "y": -32
+            }
+          ],
           "size": 8
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2"
           },
           "target": {
@@ -1197,7 +1263,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029"
           },
           "target": {
@@ -1207,7 +1273,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "871882ab-9320-4751-8aaa-593c067de942"
           },
           "target": {
@@ -1223,7 +1289,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "0f9aeb5b-5991-4083-9da5-cf7653450be7"
           },
           "target": {
@@ -1244,7 +1310,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "47eddfd5-6ef1-4265-b902-5ecf75201fce"
           },
           "target": {
@@ -1277,7 +1343,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "0c226e65-38fe-4ae0-8016-42bb3ed260f2"
           },
           "target": {
@@ -1293,7 +1359,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "f02c1b23-a792-46d9-80d1-ad467bfd6724"
           },
           "target": {
@@ -1344,26 +1410,6 @@
             "port": "2c7ea593-8f7c-4e9f-9d38-4df104eb4048"
           },
           "size": 3
-        },
-        {
-          "source": {
-            "block": "943e48b4-aec3-41cd-9110-1febebc15e48",
-            "port": "664caf9e-5f40-4df4-800a-b626af702e62"
-          },
-          "target": {
-            "block": "e7e66461-be48-4f49-b1ef-e2baeada4921",
-            "port": "1e637a79-4a6d-495c-bcac-9664bdbe4b94"
-          },
-          "vertices": [
-            {
-              "x": 1680,
-              "y": -240
-            },
-            {
-              "x": 1344,
-              "y": -288
-            }
-          ]
         },
         {
           "source": {
@@ -1500,7 +1546,7 @@
             "port": "57e30843-5f0f-4222-a36b-0b3f69251e92"
           },
           "target": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "58cddceb-eae2-4c22-abed-27516a835569"
           },
           "vertices": [
@@ -1523,7 +1569,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "efe65228-353f-4641-a47b-18878a932254"
           },
           "target": {
@@ -1541,6 +1587,12 @@
             "block": "fca1dc78-1ac7-4248-9cc8-75899b1864be",
             "port": "02ad2971-d5c5-4316-bc5c-363769b92f5b"
           },
+          "vertices": [
+            {
+              "x": 1608,
+              "y": -80
+            }
+          ],
           "size": 8
         },
         {
@@ -1562,7 +1614,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "0c5d2f95-a9f2-4460-a22d-eccc447147ff"
           },
           "target": {
@@ -1589,7 +1641,7 @@
         },
         {
           "source": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "5d1844f7-8e54-4aff-b034-4914481cbece"
           },
           "target": {
@@ -1654,7 +1706,7 @@
             "port": "1a3f2e03-fa49-4b5a-9383-1c84f84a7e93"
           },
           "target": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
             "port": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44"
           },
           "vertices": [],
@@ -1662,7 +1714,7 @@
         },
         {
           "source": {
-            "block": "46de1d62-8554-406c-a714-4f6b5ef52397",
+            "block": "c6f74b85-f38a-4230-95ac-25d872cad674",
             "port": "memory-out"
           },
           "target": {
@@ -1672,12 +1724,74 @@
         },
         {
           "source": {
-            "block": "e549f359-3f29-4aa4-8d31-e3e50394424c",
+            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
+          },
+          "target": {
+            "block": "60d37fff-f556-499c-8e61-945151b7d45b",
+            "port": "18c2ebc7-5152-439c-9b3f-851c59bac834"
+          }
+        },
+        {
+          "source": {
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
+            "port": "9556b756-b40d-406d-9083-3db71ad006d8"
+          },
+          "target": {
+            "block": "b1042669-d826-4675-84cb-e8da60bc38fb",
+            "port": "18c2ebc7-5152-439c-9b3f-851c59bac834"
+          },
+          "vertices": [
+            {
+              "x": 1544,
+              "y": -240
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "60d37fff-f556-499c-8e61-945151b7d45b",
             "port": "664caf9e-5f40-4df4-800a-b626af702e62"
           },
           "target": {
-            "block": "e8d0b976-2dca-42d4-8ed0-8f65cbe264df",
-            "port": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423"
+            "block": "b1042669-d826-4675-84cb-e8da60bc38fb",
+            "port": "97b51945-d716-4b6c-9db9-970d08541249"
+          }
+        },
+        {
+          "source": {
+            "block": "b1042669-d826-4675-84cb-e8da60bc38fb",
+            "port": "664caf9e-5f40-4df4-800a-b626af702e62"
+          },
+          "target": {
+            "block": "a9118b27-0163-4425-ad10-e284d3e680a4",
+            "port": "18c2ebc7-5152-439c-9b3f-851c59bac834"
+          }
+        },
+        {
+          "source": {
+            "block": "943e48b4-aec3-41cd-9110-1febebc15e48",
+            "port": "664caf9e-5f40-4df4-800a-b626af702e62"
+          },
+          "target": {
+            "block": "a9118b27-0163-4425-ad10-e284d3e680a4",
+            "port": "97b51945-d716-4b6c-9db9-970d08541249"
+          },
+          "vertices": [
+            {
+              "x": 1808,
+              "y": -216
+            }
+          ]
+        },
+        {
+          "source": {
+            "block": "a9118b27-0163-4425-ad10-e284d3e680a4",
+            "port": "664caf9e-5f40-4df4-800a-b626af702e62"
+          },
+          "target": {
+            "block": "e7e66461-be48-4f49-b1ef-e2baeada4921",
+            "port": "1e637a79-4a6d-495c-bcac-9664bdbe4b94"
           }
         },
         {
@@ -1686,28 +1800,28 @@
             "port": "997db8c4-b772-49d8-83e7-4427aff720e6"
           },
           "target": {
-            "block": "e549f359-3f29-4aa4-8d31-e3e50394424c",
-            "port": "18c2ebc7-5152-439c-9b3f-851c59bac834"
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
+            "port": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423"
           }
         },
         {
           "source": {
-            "block": "366048dc-10ae-45e0-8cbf-aa8a02c0d05d",
-            "port": "c138a610-b61f-4e7c-bb8a-c4f3b0b9f95c"
+            "block": "74abfedd-8cb2-40c7-9aab-d7ac484b3834",
+            "port": "9556b756-b40d-406d-9083-3db71ad006d8"
           },
           "target": {
-            "block": "e549f359-3f29-4aa4-8d31-e3e50394424c",
-            "port": "97b51945-d716-4b6c-9db9-970d08541249"
+            "block": "108cf776-6453-44f6-a4fb-9d5b2fa62bd5",
+            "port": "in"
           }
         },
         {
           "source": {
-            "block": "efc5a961-00fa-47f8-91bd-bdea19661589",
-            "port": "constant-out"
+            "block": "c26f485b-28a1-428e-95a1-880b5ab94177",
+            "port": "3b984a24-aa6f-4ce6-87a2-1d110e69b2bb"
           },
           "target": {
-            "block": "366048dc-10ae-45e0-8cbf-aa8a02c0d05d",
-            "port": "136e8d6d-892a-4f14-8d6d-0c5bc6c3e844"
+            "block": "98e73d80-d9c4-4835-b849-229145465d5f",
+            "port": "in"
           }
         }
       ]
@@ -4398,670 +4512,6 @@
         }
       }
     },
-    "526a53901668e41fa2b563d6a9bdbfcfff0766ef": {
-      "package": {
-        "name": "UC",
-        "version": "1.0",
-        "description": "Unidad de control",
-        "author": "Juan González-Gómez (obijuan)",
-        "image": ""
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
-              "type": "basic.output",
-              "data": {
-                "name": "regDest"
-              },
-              "position": {
-                "x": 776,
-                "y": -64
-              }
-            },
-            {
-              "id": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
-              "type": "basic.input",
-              "data": {
-                "name": "",
-                "clock": true
-              },
-              "position": {
-                "x": -32,
-                "y": -8
-              }
-            },
-            {
-              "id": "871882ab-9320-4751-8aaa-593c067de942",
-              "type": "basic.output",
-              "data": {
-                "name": "regwrite"
-              },
-              "position": {
-                "x": 800,
-                "y": 8
-              }
-            },
-            {
-              "id": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
-              "type": "basic.output",
-              "data": {
-                "name": "jump"
-              },
-              "position": {
-                "x": 816,
-                "y": 72
-              }
-            },
-            {
-              "id": "235a2558-f924-4678-ad01-f8f8f243680a",
-              "type": "basic.output",
-              "data": {
-                "name": "alusrc"
-              },
-              "position": {
-                "x": 840,
-                "y": 128
-              }
-            },
-            {
-              "id": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
-              "type": "basic.input",
-              "data": {
-                "name": "op",
-                "range": "[5:0]",
-                "clock": false,
-                "size": 6
-              },
-              "position": {
-                "x": -40,
-                "y": 136
-              }
-            },
-            {
-              "id": "efe65228-353f-4641-a47b-18878a932254",
-              "type": "basic.output",
-              "data": {
-                "name": "Aluop",
-                "range": "[1:0]",
-                "size": 2
-              },
-              "position": {
-                "x": 840,
-                "y": 192
-              }
-            },
-            {
-              "id": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
-              "type": "basic.output",
-              "data": {
-                "name": "beq"
-              },
-              "position": {
-                "x": 840,
-                "y": 240
-              }
-            },
-            {
-              "id": "58cddceb-eae2-4c22-abed-27516a835569",
-              "type": "basic.input",
-              "data": {
-                "name": "fin",
-                "clock": false
-              },
-              "position": {
-                "x": -48,
-                "y": 240
-              }
-            },
-            {
-              "id": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
-              "type": "basic.output",
-              "data": {
-                "name": "memwrite"
-              },
-              "position": {
-                "x": 840,
-                "y": 296
-              }
-            },
-            {
-              "id": "3e05a72d-e524-4463-be45-28e5d84f70f6",
-              "type": "basic.input",
-              "data": {
-                "name": "regs_ok",
-                "clock": false
-              },
-              "position": {
-                "x": -48,
-                "y": 336
-              }
-            },
-            {
-              "id": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
-              "type": "basic.output",
-              "data": {
-                "name": "memtoreg"
-              },
-              "position": {
-                "x": 832,
-                "y": 360
-              }
-            },
-            {
-              "id": "5d1844f7-8e54-4aff-b034-4914481cbece",
-              "type": "basic.output",
-              "data": {
-                "name": "o_fin"
-              },
-              "position": {
-                "x": 808,
-                "y": 416
-              }
-            },
-            {
-              "id": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
-              "type": "basic.input",
-              "data": {
-                "name": "exec",
-                "clock": false
-              },
-              "position": {
-                "x": -48,
-                "y": 464
-              }
-            },
-            {
-              "id": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
-              "type": "basic.output",
-              "data": {
-                "name": "error"
-              },
-              "position": {
-                "x": 784,
-                "y": 480
-              }
-            },
-            {
-              "id": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
-              "type": "basic.output",
-              "data": {
-                "name": "incPC"
-              },
-              "position": {
-                "x": 752,
-                "y": 536
-              }
-            },
-            {
-              "id": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-              "type": "basic.code",
-              "data": {
-                "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ORI =   6'b001101;\nlocalparam ADDIU = 6'b001001;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    },
-                    {
-                      "name": "opcode",
-                      "range": "[5:0]",
-                      "size": 6
-                    },
-                    {
-                      "name": "fin"
-                    },
-                    {
-                      "name": "regs_ok"
-                    },
-                    {
-                      "name": "exec"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "regDest"
-                    },
-                    {
-                      "name": "regwrite"
-                    },
-                    {
-                      "name": "jump"
-                    },
-                    {
-                      "name": "alusrc"
-                    },
-                    {
-                      "name": "Aluop",
-                      "range": "[1:0]",
-                      "size": 2
-                    },
-                    {
-                      "name": "beq"
-                    },
-                    {
-                      "name": "memwrite"
-                    },
-                    {
-                      "name": "memtoreg"
-                    },
-                    {
-                      "name": "o_fin"
-                    },
-                    {
-                      "name": "error"
-                    },
-                    {
-                      "name": "incPC"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 168,
-                "y": 24
-              },
-              "size": {
-                "width": 488,
-                "height": 488
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "regDest"
-              },
-              "target": {
-                "block": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "regwrite"
-              },
-              "target": {
-                "block": "871882ab-9320-4751-8aaa-593c067de942",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "jump"
-              },
-              "target": {
-                "block": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "alusrc"
-              },
-              "target": {
-                "block": "235a2558-f924-4678-ad01-f8f8f243680a",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "Aluop"
-              },
-              "target": {
-                "block": "efe65228-353f-4641-a47b-18878a932254",
-                "port": "in"
-              },
-              "size": 2
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "beq"
-              },
-              "target": {
-                "block": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "incPC"
-              },
-              "target": {
-                "block": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "error"
-              },
-              "target": {
-                "block": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "o_fin"
-              },
-              "target": {
-                "block": "5d1844f7-8e54-4aff-b034-4914481cbece",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "memtoreg"
-              },
-              "target": {
-                "block": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "memwrite"
-              },
-              "target": {
-                "block": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
-                "port": "out"
-              },
-              "target": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "clk"
-              }
-            },
-            {
-              "source": {
-                "block": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
-                "port": "out"
-              },
-              "target": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "opcode"
-              },
-              "size": 6
-            },
-            {
-              "source": {
-                "block": "58cddceb-eae2-4c22-abed-27516a835569",
-                "port": "out"
-              },
-              "target": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "fin"
-              }
-            },
-            {
-              "source": {
-                "block": "3e05a72d-e524-4463-be45-28e5d84f70f6",
-                "port": "out"
-              },
-              "target": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "regs_ok"
-              }
-            },
-            {
-              "source": {
-                "block": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
-                "port": "out"
-              },
-              "target": {
-                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
-                "port": "exec"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "81613874c6152f06c06ed7014bf4235900cfcc30": {
-      "package": {
-        "name": "OR",
-        "version": "1.0.1",
-        "description": "Puerta OR",
-        "author": "Jesús Arroyo, Juan González",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20height=%22192.718%22%20width=%22383.697%22%20version=%221%22%3E%3Cpath%20d=%22M175.56%20188.718H84.527s30.345-42.538%2031.086-94.03c.743-51.49-31.821-90.294-31.821-90.294L176.109%204c46.445%201.948%20103.899%2053.44%20123.047%2093.678-32.601%2067.503-92.158%2089.79-123.596%2091.04z%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M4.057%2047.292h99.605M4.883%20145.168h100.981M298.57%2098.89h81.07%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22/%3E%3Ctext%20style=%22line-height:125%25%22%20font-weight=%22400%22%20font-size=%2266.317%22%20y=%22121.28%22%20x=%22131.572%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22#00f%22%3E%3Ctspan%20font-weight=%22700%22%20y=%22121.28%22%20x=%22131.572%22%3EOR%3C/tspan%3E%3C/text%3E%3C/svg%3E"
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "18c2ebc7-5152-439c-9b3f-851c59bac834",
-              "type": "basic.input",
-              "data": {
-                "name": ""
-              },
-              "position": {
-                "x": 64,
-                "y": 88
-              }
-            },
-            {
-              "id": "664caf9e-5f40-4df4-800a-b626af702e62",
-              "type": "basic.output",
-              "data": {
-                "name": ""
-              },
-              "position": {
-                "x": 784,
-                "y": 152
-              }
-            },
-            {
-              "id": "97b51945-d716-4b6c-9db9-970d08541249",
-              "type": "basic.input",
-              "data": {
-                "name": ""
-              },
-              "position": {
-                "x": 64,
-                "y": 224
-              }
-            },
-            {
-              "id": "00925b04-5004-4307-a737-fa4e97c8b6ab",
-              "type": "basic.code",
-              "data": {
-                "code": "//-- Puerta OR\n\n//-- module and (input wire a, input wire b,\n//--             output wire c);\n\nassign c = a | b;\n\n//-- endmodule",
-                "params": [],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "a"
-                    },
-                    {
-                      "name": "b"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "c"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 256,
-                "y": 48
-              },
-              "size": {
-                "width": 464,
-                "height": 272
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "18c2ebc7-5152-439c-9b3f-851c59bac834",
-                "port": "out"
-              },
-              "target": {
-                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
-                "port": "a"
-              }
-            },
-            {
-              "source": {
-                "block": "97b51945-d716-4b6c-9db9-970d08541249",
-                "port": "out"
-              },
-              "target": {
-                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
-                "port": "b"
-              }
-            },
-            {
-              "source": {
-                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
-                "port": "c"
-              },
-              "target": {
-                "block": "664caf9e-5f40-4df4-800a-b626af702e62",
-                "port": "in"
-              }
-            }
-          ]
-        }
-      }
-    },
-    "519d315d08b3a8cc1aac53c9d14d2fd81d67033f": {
-      "package": {
-        "name": "Corazon-tic-ms",
-        "version": "0.1",
-        "description": "Corazón de bombeo de tics a con periodo paramétrico de milisegundos",
-        "author": "Juan Gonzalez-Gomez (Obijuan)",
-        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22197.514%22%20height=%22161.086%22%20viewBox=%220%200%2052.259014%2042.62059%22%3E%3Cpath%20d=%22M22.153%2040.47c-.727-1.25-1.853-2.474-3.987-4.332-1.156-1.006-1.86-1.565-5.863-4.658-3.138-2.425-4.704-3.77-6.519-5.601-1.813-1.831-2.88-3.29-3.794-5.191a15.321%2015.321%200%200%201-1.235-3.6c-.317-1.545-.36-2.067-.358-4.342.002-2.983.1-3.48%201.08-5.47.728-1.479%201.281-2.257%202.433-3.427C5.028%202.714%205.754%202.2%207.325%201.422%209.069.56%2010.33.333%2012.93.417c2.02.065%202.759.266%204.36%201.188%202.52%201.45%204.475%203.777%205.017%205.972.088.358.18.652.203.652.023%200%20.227-.42.453-.932.77-1.744%201.484-2.808%202.62-3.903C29.06.041%2034.542-.565%2038.974%201.912c1.81%201.012%203.283%202.485%204.425%204.424.898%201.527%201.358%203.555%201.436%206.34.113%204.035-.625%206.832-2.59%209.812-.779%201.182-1.355%201.899-2.437%203.028-1.745%201.823-3.318%203.162-7.033%205.988-2.344%201.782-3.734%202.929-5.745%204.74-1.611%201.452-4.108%203.98-4.349%204.402-.105.185-.2.336-.21.336-.012%200-.154-.23-.318-.512z%22%20fill=%22red%22/%3E%3Ctext%20y=%2262.314%22%20x=%2259.897%22%20style=%22line-height:0%25%22%20font-weight=%22400%22%20font-size=%2215.216%22%20letter-spacing=%220%22%20word-spacing=%220%22%20transform=%22matrix(.99853%200%200%201.00147%20-50.645%20-44.99)%22%20font-family=%22sans-serif%22%20fill=%22#00f%22%20stroke-width=%22.282%22%3E%3Ctspan%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20y=%2262.314%22%20x=%2259.897%22%20font-weight=%22700%22%20font-size=%228.695%22%3Emsec%3C/tspan%3E%3C/text%3E%3Cg%20transform=%22matrix(.79321%200%200%20.79321%20-39.33%20-27.72)%22%20stroke=%22green%22%20stroke-linecap=%22round%22%3E%3Ccircle%20r=%2214.559%22%20cy=%2273.815%22%20cx=%22100.602%22%20fill=%22#ececec%22%20stroke-width=%22.608%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M106.978%2082.142h-3.353V63.316H97.54v18.678h-3.652%22%20fill=%22none%22%20stroke-width=%221.521%22/%3E%3C/g%3E%3C/svg%3E"
-      },
-      "design": {
-        "graph": {
-          "blocks": [
-            {
-              "id": "c138a610-b61f-4e7c-bb8a-c4f3b0b9f95c",
-              "type": "basic.output",
-              "data": {
-                "name": ""
-              },
-              "position": {
-                "x": 912,
-                "y": 192
-              }
-            },
-            {
-              "id": "503869f1-ddfd-4d13-93ad-5f90281ba88c",
-              "type": "basic.input",
-              "data": {
-                "name": "",
-                "clock": true
-              },
-              "position": {
-                "x": 104,
-                "y": 192
-              }
-            },
-            {
-              "id": "136e8d6d-892a-4f14-8d6d-0c5bc6c3e844",
-              "type": "basic.constant",
-              "data": {
-                "name": "",
-                "value": "100",
-                "local": false
-              },
-              "position": {
-                "x": 520,
-                "y": -128
-              }
-            },
-            {
-              "id": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
-              "type": "basic.code",
-              "data": {
-                "code": "//localparam MS;\n\n//-- Constante para dividir y obtener una frecuencia de 1KHz\nlocalparam M = 12000*MS;\n\n//-- Calcular el numero de bits para almacenar M\nlocalparam N = $clog2(M);\n\n//-- Cable de reset para el contador\nwire reset;\n\n//-- Registro del divisor\nreg [N-1:0] divcounter;\n\n\n//-- Contador con reset\nalways @(posedge clk)\n  if (reset)\n    divcounter <= 0;\n  else\n    divcounter <= divcounter + 1;\n\n//-- Comparador que resetea el contador cuando se alcanza el tope\nassign reset = (divcounter == M-1);\n\n//-- La salida es la señal de overflow\nassign o = reset;\n\n\n\n",
-                "params": [
-                  {
-                    "name": "MS"
-                  }
-                ],
-                "ports": {
-                  "in": [
-                    {
-                      "name": "clk"
-                    }
-                  ],
-                  "out": [
-                    {
-                      "name": "o"
-                    }
-                  ]
-                }
-              },
-              "position": {
-                "x": 296,
-                "y": -8
-              },
-              "size": {
-                "width": 544,
-                "height": 456
-              }
-            }
-          ],
-          "wires": [
-            {
-              "source": {
-                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
-                "port": "o"
-              },
-              "target": {
-                "block": "c138a610-b61f-4e7c-bb8a-c4f3b0b9f95c",
-                "port": "in"
-              }
-            },
-            {
-              "source": {
-                "block": "503869f1-ddfd-4d13-93ad-5f90281ba88c",
-                "port": "out"
-              },
-              "target": {
-                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
-                "port": "clk"
-              }
-            },
-            {
-              "source": {
-                "block": "136e8d6d-892a-4f14-8d6d-0c5bc6c3e844",
-                "port": "constant-out"
-              },
-              "target": {
-                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
-                "port": "MS"
-              }
-            }
-          ]
-        }
-      }
-    },
     "951c45a0ff6b162a3892b782e8021985eb8da42d": {
       "package": {
         "name": "Debug",
@@ -6006,6 +5456,121 @@
         }
       }
     },
+    "519d315d08b3a8cc1aac53c9d14d2fd81d67033f": {
+      "package": {
+        "name": "Corazon-tic-ms",
+        "version": "0.1",
+        "description": "Corazón de bombeo de tics a con periodo paramétrico de milisegundos",
+        "author": "Juan Gonzalez-Gomez (Obijuan)",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22197.514%22%20height=%22161.086%22%20viewBox=%220%200%2052.259014%2042.62059%22%3E%3Cpath%20d=%22M22.153%2040.47c-.727-1.25-1.853-2.474-3.987-4.332-1.156-1.006-1.86-1.565-5.863-4.658-3.138-2.425-4.704-3.77-6.519-5.601-1.813-1.831-2.88-3.29-3.794-5.191a15.321%2015.321%200%200%201-1.235-3.6c-.317-1.545-.36-2.067-.358-4.342.002-2.983.1-3.48%201.08-5.47.728-1.479%201.281-2.257%202.433-3.427C5.028%202.714%205.754%202.2%207.325%201.422%209.069.56%2010.33.333%2012.93.417c2.02.065%202.759.266%204.36%201.188%202.52%201.45%204.475%203.777%205.017%205.972.088.358.18.652.203.652.023%200%20.227-.42.453-.932.77-1.744%201.484-2.808%202.62-3.903C29.06.041%2034.542-.565%2038.974%201.912c1.81%201.012%203.283%202.485%204.425%204.424.898%201.527%201.358%203.555%201.436%206.34.113%204.035-.625%206.832-2.59%209.812-.779%201.182-1.355%201.899-2.437%203.028-1.745%201.823-3.318%203.162-7.033%205.988-2.344%201.782-3.734%202.929-5.745%204.74-1.611%201.452-4.108%203.98-4.349%204.402-.105.185-.2.336-.21.336-.012%200-.154-.23-.318-.512z%22%20fill=%22red%22/%3E%3Ctext%20y=%2262.314%22%20x=%2259.897%22%20style=%22line-height:0%25%22%20font-weight=%22400%22%20font-size=%2215.216%22%20letter-spacing=%220%22%20word-spacing=%220%22%20transform=%22matrix(.99853%200%200%201.00147%20-50.645%20-44.99)%22%20font-family=%22sans-serif%22%20fill=%22#00f%22%20stroke-width=%22.282%22%3E%3Ctspan%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20y=%2262.314%22%20x=%2259.897%22%20font-weight=%22700%22%20font-size=%228.695%22%3Emsec%3C/tspan%3E%3C/text%3E%3Cg%20transform=%22matrix(.79321%200%200%20.79321%20-39.33%20-27.72)%22%20stroke=%22green%22%20stroke-linecap=%22round%22%3E%3Ccircle%20r=%2214.559%22%20cy=%2273.815%22%20cx=%22100.602%22%20fill=%22#ececec%22%20stroke-width=%22.608%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M106.978%2082.142h-3.353V63.316H97.54v18.678h-3.652%22%20fill=%22none%22%20stroke-width=%221.521%22/%3E%3C/g%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "c138a610-b61f-4e7c-bb8a-c4f3b0b9f95c",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 912,
+                "y": 192
+              }
+            },
+            {
+              "id": "503869f1-ddfd-4d13-93ad-5f90281ba88c",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": 104,
+                "y": 192
+              }
+            },
+            {
+              "id": "136e8d6d-892a-4f14-8d6d-0c5bc6c3e844",
+              "type": "basic.constant",
+              "data": {
+                "name": "",
+                "value": "100",
+                "local": false
+              },
+              "position": {
+                "x": 520,
+                "y": -128
+              }
+            },
+            {
+              "id": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
+              "type": "basic.code",
+              "data": {
+                "code": "//localparam MS;\n\n//-- Constante para dividir y obtener una frecuencia de 1KHz\nlocalparam M = 12000*MS;\n\n//-- Calcular el numero de bits para almacenar M\nlocalparam N = $clog2(M);\n\n//-- Cable de reset para el contador\nwire reset;\n\n//-- Registro del divisor\nreg [N-1:0] divcounter;\n\n\n//-- Contador con reset\nalways @(posedge clk)\n  if (reset)\n    divcounter <= 0;\n  else\n    divcounter <= divcounter + 1;\n\n//-- Comparador que resetea el contador cuando se alcanza el tope\nassign reset = (divcounter == M-1);\n\n//-- La salida es la señal de overflow\nassign o = reset;\n\n\n\n",
+                "params": [
+                  {
+                    "name": "MS"
+                  }
+                ],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "o"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 296,
+                "y": -8
+              },
+              "size": {
+                "width": 544,
+                "height": 456
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
+                "port": "o"
+              },
+              "target": {
+                "block": "c138a610-b61f-4e7c-bb8a-c4f3b0b9f95c",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "503869f1-ddfd-4d13-93ad-5f90281ba88c",
+                "port": "out"
+              },
+              "target": {
+                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "136e8d6d-892a-4f14-8d6d-0c5bc6c3e844",
+                "port": "constant-out"
+              },
+              "target": {
+                "block": "a70d9684-3b18-4f3d-90cd-28faa893b6b2",
+                "port": "MS"
+              }
+            }
+          ]
+        }
+      }
+    },
     "21cfcc19a4ad14c5fb5e8cfebd018ec356fe7542": {
       "package": {
         "name": "0",
@@ -6725,6 +6290,666 @@
               "target": {
                 "block": "7e864797-b165-408f-a9ce-2e71dc63f8b8",
                 "port": "HZ"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "35f267d0df6ffcb7fc33753bc9df9cf083642cca": {
+      "package": {
+        "name": "NOT",
+        "version": "1.0.3",
+        "description": "Puerta NOT",
+        "author": "Jesús Arroyo, Juan González",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22317.651%22%20height=%22194.058%22%20version=%221%22%3E%3Cpath%20d=%22M69.246%204l161.86%2093.027-161.86%2093.031V4z%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linejoin=%22round%22/%3E%3Cellipse%20cx=%22253.352%22%20cy=%2296.736%22%20rx=%2221.393%22%20ry=%2221.893%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M4.057%2097.49h65.262m205.796%200h38.48%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22/%3E%3Ctext%20style=%22line-height:125%25%22%20x=%2281.112%22%20y=%22111.734%22%20transform=%22scale(.99532%201.0047)%22%20font-weight=%22400%22%20font-size=%2249.675%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22#00f%22%3E%3Ctspan%20x=%2281.112%22%20y=%22111.734%22%20style=%22-inkscape-font-specification:'sans-serif%20Bold'%22%20font-weight=%22700%22%3ENot%3C/tspan%3E%3C/text%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "18c2ebc7-5152-439c-9b3f-851c59bac834",
+              "type": "basic.input",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 64,
+                "y": 144
+              }
+            },
+            {
+              "id": "664caf9e-5f40-4df4-800a-b626af702e62",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 752,
+                "y": 144
+              }
+            },
+            {
+              "id": "5365ed8c-e5db-4445-938f-8d689830ea5c",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Puerta NOT\n\n//-- module (input wire a, output wire c);\n\n\nassign c = ~a;\n\n\n//-- endmodule\n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "a"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "c"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 256,
+                "y": 48
+              },
+              "size": {
+                "width": 400,
+                "height": 256
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "18c2ebc7-5152-439c-9b3f-851c59bac834",
+                "port": "out"
+              },
+              "target": {
+                "block": "5365ed8c-e5db-4445-938f-8d689830ea5c",
+                "port": "a"
+              }
+            },
+            {
+              "source": {
+                "block": "5365ed8c-e5db-4445-938f-8d689830ea5c",
+                "port": "c"
+              },
+              "target": {
+                "block": "664caf9e-5f40-4df4-800a-b626af702e62",
+                "port": "in"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "81613874c6152f06c06ed7014bf4235900cfcc30": {
+      "package": {
+        "name": "OR",
+        "version": "1.0.1",
+        "description": "Puerta OR",
+        "author": "Jesús Arroyo, Juan González",
+        "image": "%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20height=%22192.718%22%20width=%22383.697%22%20version=%221%22%3E%3Cpath%20d=%22M175.56%20188.718H84.527s30.345-42.538%2031.086-94.03c.743-51.49-31.821-90.294-31.821-90.294L176.109%204c46.445%201.948%20103.899%2053.44%20123.047%2093.678-32.601%2067.503-92.158%2089.79-123.596%2091.04z%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M4.057%2047.292h99.605M4.883%20145.168h100.981M298.57%2098.89h81.07%22%20fill=%22none%22%20stroke=%22#000%22%20stroke-width=%228%22%20stroke-linecap=%22round%22/%3E%3Ctext%20style=%22line-height:125%25%22%20font-weight=%22400%22%20font-size=%2266.317%22%20y=%22121.28%22%20x=%22131.572%22%20font-family=%22sans-serif%22%20letter-spacing=%220%22%20word-spacing=%220%22%20fill=%22#00f%22%3E%3Ctspan%20font-weight=%22700%22%20y=%22121.28%22%20x=%22131.572%22%3EOR%3C/tspan%3E%3C/text%3E%3C/svg%3E"
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "18c2ebc7-5152-439c-9b3f-851c59bac834",
+              "type": "basic.input",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 64,
+                "y": 88
+              }
+            },
+            {
+              "id": "664caf9e-5f40-4df4-800a-b626af702e62",
+              "type": "basic.output",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 784,
+                "y": 152
+              }
+            },
+            {
+              "id": "97b51945-d716-4b6c-9db9-970d08541249",
+              "type": "basic.input",
+              "data": {
+                "name": ""
+              },
+              "position": {
+                "x": 64,
+                "y": 224
+              }
+            },
+            {
+              "id": "00925b04-5004-4307-a737-fa4e97c8b6ab",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Puerta OR\n\n//-- module and (input wire a, input wire b,\n//--             output wire c);\n\nassign c = a | b;\n\n//-- endmodule",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "a"
+                    },
+                    {
+                      "name": "b"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "c"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 256,
+                "y": 48
+              },
+              "size": {
+                "width": 464,
+                "height": 272
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "18c2ebc7-5152-439c-9b3f-851c59bac834",
+                "port": "out"
+              },
+              "target": {
+                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
+                "port": "a"
+              }
+            },
+            {
+              "source": {
+                "block": "97b51945-d716-4b6c-9db9-970d08541249",
+                "port": "out"
+              },
+              "target": {
+                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
+                "port": "b"
+              }
+            },
+            {
+              "source": {
+                "block": "00925b04-5004-4307-a737-fa4e97c8b6ab",
+                "port": "c"
+              },
+              "target": {
+                "block": "664caf9e-5f40-4df4-800a-b626af702e62",
+                "port": "in"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "9a6ccc4257a947de429f3e8a43a8a96de70c6a7c": {
+      "package": {
+        "name": "UC",
+        "version": "1.0",
+        "description": "Unidad de control",
+        "author": "Juan González-Gómez (obijuan)",
+        "image": ""
+      },
+      "design": {
+        "graph": {
+          "blocks": [
+            {
+              "id": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
+              "type": "basic.output",
+              "data": {
+                "name": "regDest"
+              },
+              "position": {
+                "x": 776,
+                "y": -64
+              }
+            },
+            {
+              "id": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
+              "type": "basic.input",
+              "data": {
+                "name": "",
+                "clock": true
+              },
+              "position": {
+                "x": -32,
+                "y": -8
+              }
+            },
+            {
+              "id": "871882ab-9320-4751-8aaa-593c067de942",
+              "type": "basic.output",
+              "data": {
+                "name": "regwrite"
+              },
+              "position": {
+                "x": 800,
+                "y": -8
+              }
+            },
+            {
+              "id": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
+              "type": "basic.output",
+              "data": {
+                "name": "jump"
+              },
+              "position": {
+                "x": 824,
+                "y": 48
+              }
+            },
+            {
+              "id": "235a2558-f924-4678-ad01-f8f8f243680a",
+              "type": "basic.output",
+              "data": {
+                "name": "alusrc"
+              },
+              "position": {
+                "x": 848,
+                "y": 104
+              }
+            },
+            {
+              "id": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
+              "type": "basic.input",
+              "data": {
+                "name": "op",
+                "range": "[5:0]",
+                "clock": false,
+                "size": 6
+              },
+              "position": {
+                "x": -40,
+                "y": 136
+              }
+            },
+            {
+              "id": "efe65228-353f-4641-a47b-18878a932254",
+              "type": "basic.output",
+              "data": {
+                "name": "Aluop",
+                "range": "[1:0]",
+                "size": 2
+              },
+              "position": {
+                "x": 864,
+                "y": 152
+              }
+            },
+            {
+              "id": "9556b756-b40d-406d-9083-3db71ad006d8",
+              "type": "basic.output",
+              "data": {
+                "name": "bne"
+              },
+              "position": {
+                "x": 872,
+                "y": 216
+              }
+            },
+            {
+              "id": "58cddceb-eae2-4c22-abed-27516a835569",
+              "type": "basic.input",
+              "data": {
+                "name": "fin",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 240
+              }
+            },
+            {
+              "id": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+              "type": "basic.output",
+              "data": {
+                "name": "beq"
+              },
+              "position": {
+                "x": 848,
+                "y": 280
+              }
+            },
+            {
+              "id": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
+              "type": "basic.output",
+              "data": {
+                "name": "memwrite"
+              },
+              "position": {
+                "x": 848,
+                "y": 336
+              }
+            },
+            {
+              "id": "3e05a72d-e524-4463-be45-28e5d84f70f6",
+              "type": "basic.input",
+              "data": {
+                "name": "regs_ok",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 336
+              }
+            },
+            {
+              "id": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
+              "type": "basic.output",
+              "data": {
+                "name": "memtoreg"
+              },
+              "position": {
+                "x": 832,
+                "y": 392
+              }
+            },
+            {
+              "id": "5d1844f7-8e54-4aff-b034-4914481cbece",
+              "type": "basic.output",
+              "data": {
+                "name": "o_fin"
+              },
+              "position": {
+                "x": 808,
+                "y": 448
+              }
+            },
+            {
+              "id": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
+              "type": "basic.input",
+              "data": {
+                "name": "exec",
+                "clock": false
+              },
+              "position": {
+                "x": -48,
+                "y": 464
+              }
+            },
+            {
+              "id": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
+              "type": "basic.output",
+              "data": {
+                "name": "error"
+              },
+              "position": {
+                "x": 776,
+                "y": 512
+              }
+            },
+            {
+              "id": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
+              "type": "basic.output",
+              "data": {
+                "name": "incPC"
+              },
+              "position": {
+                "x": 744,
+                "y": 560
+              }
+            },
+            {
+              "id": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+              "type": "basic.code",
+              "data": {
+                "code": "//-- Codigos operacion \nlocalparam NOP =   6'b000000;\nlocalparam ADD   = 6'b000000;\nlocalparam RTYPE = 6'b000000;\nlocalparam JUMP =  6'b000010;\nlocalparam BEQ =   6'b000100;\nlocalparam BNE =   6'b000101;\nlocalparam ADDIU = 6'b001001;\nlocalparam ORI =   6'b001101;\nlocalparam LW    = 6'b100011;\nlocalparam SW    = 6'b101011;\n\n\nlocalparam BREAK = 6'b001101;\n\n\n//-- Unidad de control\nlocalparam IDLE = 0;\nlocalparam EXEC = 1;\nlocalparam NEXT = 2;\nlocalparam FIN = 3;\nlocalparam ERROR = 4;\nlocalparam LOAD_EXEC = 5;\nlocalparam STORE_EXEC = 6;\n\n//-- Estado del automata\nreg [2:0] state= IDLE;\nreg [2:0] next_state;\n\n//-- Salidas\nreg regwrite = 0;  //-- Escribir en registro R1\nreg incPC = 0; //-- Incrementar PC\nreg error = 0;\nreg o_fin = 0;\nreg memwrite = 0;\n\n\n//-- Transiciones de estados\nwire clk_tic;\nalways @(posedge clk)\n      state <= next_state;\n\nassign regDest = (opcode == RTYPE);\nassign alusrc = ((opcode == LW) | (opcode == SW) |\n                (opcode == ADDIU));\n                \nassign  Aluop[1] = (opcode == RTYPE);\nassign  Aluop[0] = (opcode == BEQ) | (opcode == BNE);\n      \nassign  memtoreg = (opcode == LW);\n\nassign jump = (opcode == JUMP);\n\nassign beq = (opcode == BEQ);\n\nassign bne = (opcode == BNE);\n\n      \n//-- Generacion de microordenes\n//-- y siguientes estados\nalways @(*) begin\n\n  //-- Valores por defecto:\n  \n  //-- Permanecer en mismo estado\n  next_state = state;\n  incPC = 0;\n  regwrite = 0;\n  memwrite = 0;\n  error = 0;\n  o_fin = 0;\n \ncase (state)\n    //-- Estado inicial y de reposo\n    IDLE: begin\n        if (exec)\n          next_state = EXEC;\n    end\n\n    //-- Ciclo de ejecucion\n    EXEC: begin\n      next_state = IDLE;\n      \n      if (fin)\n        next_state = FIN;\n     \n      regwrite = (opcode == LW) | (opcode == RTYPE) | \n                   (opcode == ADDIU);\n                 \n      memwrite = (opcode == SW);\n      \n      incPC = 1;\n\n       if (!regs_ok)\n              next_state = ERROR;\n      \n      //-- Falta calcular error opcode\n      \n    end\n\n      \n    //-- Error: instruccion ilegal\n    ERROR: begin\n      next_state = ERROR;\n      error = 1;\n    end\n      \n    FIN: begin\n      next_state = FIN;\n      o_fin = 1;\n    end\n      \n    default:\n      next_state = IDLE;\n    \nendcase\n\nend\n\n  \n",
+                "params": [],
+                "ports": {
+                  "in": [
+                    {
+                      "name": "clk"
+                    },
+                    {
+                      "name": "opcode",
+                      "range": "[5:0]",
+                      "size": 6
+                    },
+                    {
+                      "name": "fin"
+                    },
+                    {
+                      "name": "regs_ok"
+                    },
+                    {
+                      "name": "exec"
+                    }
+                  ],
+                  "out": [
+                    {
+                      "name": "regDest"
+                    },
+                    {
+                      "name": "regwrite"
+                    },
+                    {
+                      "name": "jump"
+                    },
+                    {
+                      "name": "alusrc"
+                    },
+                    {
+                      "name": "Aluop",
+                      "range": "[1:0]",
+                      "size": 2
+                    },
+                    {
+                      "name": "bne"
+                    },
+                    {
+                      "name": "beq"
+                    },
+                    {
+                      "name": "memwrite"
+                    },
+                    {
+                      "name": "memtoreg"
+                    },
+                    {
+                      "name": "o_fin"
+                    },
+                    {
+                      "name": "error"
+                    },
+                    {
+                      "name": "incPC"
+                    }
+                  ]
+                }
+              },
+              "position": {
+                "x": 168,
+                "y": 24
+              },
+              "size": {
+                "width": 488,
+                "height": 488
+              }
+            }
+          ],
+          "wires": [
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regDest"
+              },
+              "target": {
+                "block": "3701fe0c-e4cb-4347-a15d-2a251eba3fb2",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regwrite"
+              },
+              "target": {
+                "block": "871882ab-9320-4751-8aaa-593c067de942",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "jump"
+              },
+              "target": {
+                "block": "0c226e65-38fe-4ae0-8016-42bb3ed260f2",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "alusrc"
+              },
+              "target": {
+                "block": "235a2558-f924-4678-ad01-f8f8f243680a",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "Aluop"
+              },
+              "target": {
+                "block": "efe65228-353f-4641-a47b-18878a932254",
+                "port": "in"
+              },
+              "size": 2
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "beq"
+              },
+              "target": {
+                "block": "f02c1b23-a792-46d9-80d1-ad467bfd6724",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "incPC"
+              },
+              "target": {
+                "block": "47eddfd5-6ef1-4265-b902-5ecf75201fce",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "error"
+              },
+              "target": {
+                "block": "0c5d2f95-a9f2-4460-a22d-eccc447147ff",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "o_fin"
+              },
+              "target": {
+                "block": "5d1844f7-8e54-4aff-b034-4914481cbece",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "memtoreg"
+              },
+              "target": {
+                "block": "a3c5504f-7dfc-4b93-bf6f-a0a64e3ba029",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "memwrite"
+              },
+              "target": {
+                "block": "0f9aeb5b-5991-4083-9da5-cf7653450be7",
+                "port": "in"
+              }
+            },
+            {
+              "source": {
+                "block": "00bb50d6-f1d2-4ff3-83dd-436769a367d7",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "clk"
+              }
+            },
+            {
+              "source": {
+                "block": "1808b7ff-4eae-4650-b1e8-b5ff6aff6f44",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "opcode"
+              },
+              "size": 6
+            },
+            {
+              "source": {
+                "block": "58cddceb-eae2-4c22-abed-27516a835569",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "fin"
+              }
+            },
+            {
+              "source": {
+                "block": "3e05a72d-e524-4463-be45-28e5d84f70f6",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "regs_ok"
+              }
+            },
+            {
+              "source": {
+                "block": "5ef5cc3d-c24a-4fa1-9e83-35d2cb420423",
+                "port": "out"
+              },
+              "target": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "exec"
+              }
+            },
+            {
+              "source": {
+                "block": "cdc92f8c-d720-44d9-a799-8e63abd9190d",
+                "port": "bne"
+              },
+              "target": {
+                "block": "9556b756-b40d-406d-9083-3db71ad006d8",
+                "port": "in"
               }
             }
           ]
