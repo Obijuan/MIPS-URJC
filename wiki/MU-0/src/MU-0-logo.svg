@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1259.2296mm"
+   width="1169.427mm"
    height="585.98987mm"
-   viewBox="0 0 1259.2296 585.98988"
+   viewBox="0 0 1169.427 585.98988"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -27,7 +27,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.12374369"
-     inkscape:cx="2454.0558"
+     inkscape:cx="1043.8829"
      inkscape:cy="844.829"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
@@ -38,10 +38,10 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1853"
-     inkscape:window-height="1025"
-     inkscape:window-x="67"
-     inkscape:window-y="1107"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-global="false" />
   <metadata
@@ -64,7 +64,7 @@
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.06741476;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect947"
-       width="1259.2296"
+       width="1169.427"
        height="585.98987"
        x="-137.51276"
        y="-93.040604"
@@ -73,7 +73,7 @@
        inkscape:export-ydpi="90" />
     <g
        id="g1244"
-       transform="matrix(0.74244107,0,0,0.74244107,936.83899,275.59684)"
+       transform="matrix(0.74244107,0,0,0.74244107,838.48381,275.59684)"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
@@ -168,7 +168,7 @@
        id="rect1218"
        width="113.55335"
        height="333.28528"
-       x="447.28601"
+       x="348.93082"
        y="386.98422"
        ry="14.381673"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
@@ -268,7 +268,7 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.56378555px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.7227366"
-       x="451.95322"
+       x="353.59802"
        y="344.42688"
        id="text996-2"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
@@ -276,7 +276,7 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-61"
-         x="451.95322"
+         x="353.59802"
          y="344.42688"
          style="stroke-width:3.7227366">Procesador <tspan
    style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:ubuntu;-inkscape-font-specification:'ubuntu Medium'"
@@ -292,10 +292,10 @@
            height="17.142857"
            x="3222.8572"
            y="629.09045" /></flowRegion><flowPara
-         id="flowPara1040"></flowPara></flowRoot>    <text
+         id="flowPara1040" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:127.50666046px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:7.96916628"
-       x="431.12741"
+       x="338.55548"
        y="633.26495"
        id="text996-0-2"
        transform="scale(1.062473,0.94120039)"
@@ -304,13 +304,13 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-6-1"
-         x="431.12741"
+         x="338.55548"
          y="633.26495"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:ubuntu;-inkscape-font-specification:'ubuntu Medium';fill:#000000;stroke-width:7.96916628">U</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:120.00931549px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:7.50058222"
-       x="450.9693"
+       x="352.61411"
        y="490.15204"
        id="text996-8-5"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
@@ -318,13 +318,13 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-7-0"
-         x="450.9693"
+         x="352.61411"
          y="490.15204"
          style="fill:#000000;stroke-width:7.50058222">M</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:84.16674805px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5.26042175"
-       x="470.19232"
+       x="371.83713"
        y="689.24609"
        id="text996-8-9-1-7"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
@@ -332,13 +332,13 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-7-2-2-4"
-         x="470.19232"
+         x="371.83713"
          y="689.24609"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:ubuntu;-inkscape-font-specification:ubuntu;fill:#000000;stroke-width:5.26042175">0</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60.1051178px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.75656986"
-       x="535.14307"
+       x="442.57114"
        y="622.96082"
        id="text996-0-2-1"
        transform="scale(1.062473,0.94120039)"
@@ -347,13 +347,13 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-6-1-1"
-         x="535.14307"
+         x="442.57114"
          y="622.96082"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:ubuntu;-inkscape-font-specification:'ubuntu Medium';fill:#000000;stroke-width:3.75656986">RJC</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:50.60783768px;line-height:1.25;font-family:ubuntu;-inkscape-font-specification:ubuntu;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.16298985"
-       x="570.26007"
+       x="471.90488"
        y="489.0549"
        id="text996-8-5-3"
        inkscape:export-filename="/home/obijuan/develop/MIPS-URJC/wiki/MU-0/Intro-01.png"
@@ -361,7 +361,7 @@
        inkscape:export-ydpi="90"><tspan
          sodipodi:role="line"
          id="tspan994-7-0-0"
-         x="570.26007"
+         x="471.90488"
          y="489.0549"
          style="fill:#000000;stroke-width:3.16298985">IPS</tspan></text>
   </g>
